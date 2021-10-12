@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASICARD</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Images/Logo.svg" alt="">
+            </div>
+            <div class="search_area">
+                <form action="">
+                    <div class="search_select">
+                        <select name="" id="">
+                            <option value="" Selected disabled>All Devices</option>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                        </select>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <input type="text" class="search_item" placeholder="Search for device category, part number, or tech specs">
+                    <button id="search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="http://" target="blank" rel="Blank">About BasicRad</a></li>
+                    <li><a href="http://" target="blank" rel="Blank">Release Notes</a></li>
+                    <li><a href="http://" target="blank" rel="Blank">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="profile_element">
+                <div class="profile_image">
+                    <img src="Images/Profile.svg" alt="">
+                </div>
+                <div class="profile_name">Gbenga Badipe</div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <div class="breadcrums">
+            <ul class="breadcrum_wrap">
+                <li>
+                    <a href="http://">All Devices</a>
+                </li>
+                >
+                <li>
+                    <a href="http://">Capacitors <i class="fas fa-caret-down"></i> </a>
+                    <div class="dropdown_elem">
+                        <div class="dropdown">
+                            <!-- <li> -->
+                                <!-- <a href="http://">Device Catagory(300)</a>
+                                <div class="inner_dropdown">
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="http://" class="catagory_heading">Device Sub Catagory (10)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                        <li><a href="http://">Sub-Sub Catagory (1)</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="http://">Device Catagory(300)</a>
+                            </li>
+                            <li>
+                                <a href="http://">Device Catagory(300)</a>
+                            </li>
+                            <li>
+                                <a href="http://">Device Catagory(300)</a>
+                            </li> -->
+                            <div class="tab">
+                                <button class="tablinks active" onclick="megaMenu(event, 'menu1')">Device Catagory(300)</button>
+                                <button class="tablinks" onclick="megaMenu(event, 'menu2')">Device Catagory(300)</button>
+                                <button class="tablinks" onclick="megaMenu(event, 'menu3')">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                                <button class="tablinks">Device Catagory(300)</button>
+                              </div>
+
+                            <div id="menu1" class="tabcontent" style="display: flex;">
+                                <div class="menu_wrap">
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu_wrap">
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu_wrap">
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                        <li><a href="">Sub-Sub Category (1)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div id="menu2" class="tabcontent">
+                                menu2
+                            </div>
+                            
+                            <div id="menu3" class="tabcontent">
+                                menu3
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                >
+                <li>
+                    <a href="http://">Capacitor Arrays <i class="fas fa-caret-down"></i> </a>
+                </li>
+            </ul>
+        </div>
+        <div class="filtration">
+            <div class="fitr_txt">Filters</div>
+            <button id="add_filter">
+                <i class="fas fa-plus"></i>Add Filter
+            </button>
+            <form class="all_filter_listing">
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Manufacture
+                        <div class="total_filter">(<div id="total_filters">All</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Device Type
+                        <div class="total_filter">(<div id="total_filters">3</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Device Sub-Type
+                        <div class="total_filter">(<div id="total_filters">All</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Capacitance
+                        <div class="total_filter">(<div id="total_filters">3</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Voltage Rating
+                        <div class="total_filter">(<div id="total_filters">All</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Capacitance
+                        <div class="total_filter">(<div id="total_filters">3</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter_elem">
+                    <div class="filtr_options">
+                        Radiation Test
+                        <div class="total_filter">(<div id="total_filters">3</div>)</div><i class="fas fa-caret-down"></i>
+                        
+                        <div class="filteration_options">
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                            <div class="filtr_flex">
+                                <input type="checkbox" name="" id="filter_one"><label for="filter_one">filter_one</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="results" style="display: none;">
+            <div class="result_data">
+                <div class="results_count_elem">
+                    <div class="no_of_results">30 Results</div>
+                    <div class="result_source">Sourced from Public and Blue Origin Data Sources</div>
+                </div>
+                <div class="clear_fitr_elem">
+                    <div class="clear_txt">
+                        Clear Filters
+                    </div>
+                    <div class="groupby_elem">
+                        Group By<i class="fas fa-caret-down"></i>
+                        <div class="groupbyfiltr filtr_remove"></div>
+                    </div>
+                    <div class="column_elem">
+                        Columns<i class="fas fa-caret-down"></i>
+                        <div class="column filtr_remove"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion_elem">
+                <div class="acc_col" style="display: none;">
+                    Accordion
+                    <div class="acc_tabs">
+                      <div class="acc_tab">
+                        <input type="radio" id="rd1" name="rd">
+                        <label class="tab-label" for="rd1">Item 1</label>
+                        <div class="acc_tab-content">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
+                        </div>
+                      </div>
+                      <div class="acc_tab">
+                        <input type="radio" id="rd2" name="rd">
+                        <label class="tab-label" for="rd2">Item 2</label>
+                        <div class="acc_tab-content">
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+<script src="JS/script.js"></script>
+
+
+<script>
+function megaMenu(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "flex";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>
