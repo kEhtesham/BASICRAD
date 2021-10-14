@@ -1128,94 +1128,97 @@
                     <div class="groupby_elem clr_filtr_dropdown">
                         Group By<i class="fas fa-caret-down"></i>
                         <div class="groupbyfiltr filtr_remove">
-                            <div class="groupbyfiltr_wrap">
+                            <div class="groupbyfiltr_wrap drop_expand_menu">
                                 <div class="search_dropdown_filter">
                                     <input type="text" placeholder="Search available filters"><i class="fas fa-search"></i>
                                 </div>
-                                <div class="filtr_heading" id="clear_filtr"><img src="Images/cancel.svg" alt="Clear"> Clear all groups</div>
-                                <div class="filtr_heading" id="collapse_grp"><img src="Images/Collabs.svg" alt="Collabs"> Collapse all groups</div>
-                                <div class="filtr_heading" id="expande_grp"><img src="Images/Expand.svg" alt="Expand"> Expand all groups</div>
+                                <div class="filtr_heading" id="clear_filtr" onclick="clearfiltrFunction()"><img src="Images/cancel.svg" alt="Clear"> Clear all groups</div>
+                                <div class="filtr_heading" id="collapse_grp" onclick="collapsfiltrFunction()"><img src="Images/Collabs.svg" alt="Collabs"> Collapse all groups</div>
+                                <div class="filtr_heading" id="expande_grp" onclick="expandfiltrFunction()"><img src="Images/Expand.svg" alt="Expand"> Expand all groups</div>
                                 <div class="dropdown_accordion">
-                                    <div class="dropdown_acc_head">
+                                    <div class="dropdown_acc_head" style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
                                         Device Information
                                     </div>
                                     <div class="dropdown_acc_content">
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_part_number">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_part_number" checked>
                                             <label for="acc_part_number">Part Number</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_sku">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sku" checked>
                                             <label for="acc_sku">SKU</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_device_type">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_device_type" checked>
                                             <label for="acc_device_type">Device Type</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_manufacturer">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_manufacturer" checked>
                                             <label for="acc_manufacturer">Manufacturer</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_rev">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev" checked>
                                             <label for="acc_rev">Revision (Rev)</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_rev_date">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev_date" checked>
                                             <label for="acc_rev_date">Revision Date (Rev Date)</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_lot_code">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_lot_code" checked>
                                             <label for="acc_lot_code">Lot Code</label>
                                         </div>
                                     </div>
-                                    <div class="dropdown_acc_head">
+                                    <div class="dropdown_acc_head"  style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
                                         Radiation Test Details
                                     </div>
                                     <div class="dropdown_acc_content">
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_radiation_test">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_radiation_test" checked>
                                             <label for="acc_radiation_test">Radiation Test</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="test_catagory">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="test_catagory" checked>
                                             <label for="test_catagory">Test Catagory</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_source">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_source" checked>
                                             <label for="acc_source">Source</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_test_date">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
                                             <label for="acc_test_date">Test Date</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_test_details">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_details" checked>
                                             <label for="acc_test_details">Test Details</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_result">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_result" checked>
                                             <label for="acc_result">Results</label>
                                         </div>
                                     </div>
-                                    <div class="dropdown_acc_head">
+                                    <div class="dropdown_acc_head" style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
                                         Technical Details
                                     </div>
                                     <div class="dropdown_acc_content">
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_capacitance">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_capacitance" checked>
                                             <label for="acc_capacitance">Capacitance</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_sc_urdc">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sc_urdc" checked>
                                             <label for="acc_sc_urdc">Rated(DC) Voltage(URdc)</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_positive_tolrence">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_positive_tolrence" checked>
                                             <label for="acc_positive_tolrence">Positive Tolerance</label>
                                         </div>
                                         <div class="filtr_wrap">
-                                            <input type="checkbox" name="Filter" id="acc_test_date">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
                                             <label for="acc_test_date">Nagative Tolerance</label>
                                         </div>
                                     </div>
@@ -1225,7 +1228,104 @@
                     </div>
                     <div class="column_elem clr_filtr_dropdown">
                         Columns<i class="fas fa-caret-down"></i>
-                        <div class="column filtr_remove"></div>
+                        <div class="column filtr_remove">
+                            <div class="column_elem_wrap drop_expand_menu">
+                                <div class="search_dropdown_filter">
+                                    <input type="text" placeholder="Search available filters"><i class="fas fa-search"></i>
+                                </div>
+                                <div class="filtr_heading" id="clear_filtr" onclick="clearfiltrFunction()"><img src="Images/cancel.svg" alt="Clear"> Clear all groups</div>
+                                <div class="filtr_heading" id="collapse_grp" onclick="collapsfiltrFunction()"><img src="Images/Collabs.svg" alt="Collabs"> Collapse all groups</div>
+                                <div class="filtr_heading" id="expande_grp" onclick="expandfiltrFunction()"><img src="Images/Expand.svg" alt="Expand"> Expand all groups</div>
+                                <div class="dropdown_accordion">
+                                    <div class="dropdown_acc_head" style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
+                                        Device Information
+                                    </div>
+                                    <div class="dropdown_acc_content">
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_part_number" checked>
+                                            <label for="acc_part_number">Part Number</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sku" checked>
+                                            <label for="acc_sku">SKU</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_device_type" checked>
+                                            <label for="acc_device_type">Device Type</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_manufacturer" checked>
+                                            <label for="acc_manufacturer">Manufacturer</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev" checked>
+                                            <label for="acc_rev">Revision (Rev)</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev_date" checked>
+                                            <label for="acc_rev_date">Revision Date (Rev Date)</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_lot_code" checked>
+                                            <label for="acc_lot_code">Lot Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown_acc_head"  style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
+                                        Radiation Test Details
+                                    </div>
+                                    <div class="dropdown_acc_content">
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_radiation_test" checked>
+                                            <label for="acc_radiation_test">Radiation Test</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="test_catagory" checked>
+                                            <label for="test_catagory">Test Catagory</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_source" checked>
+                                            <label for="acc_source">Source</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
+                                            <label for="acc_test_date">Test Date</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_details" checked>
+                                            <label for="acc_test_details">Test Details</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_result" checked>
+                                            <label for="acc_result">Results</label>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown_acc_head" style="display: block;">
+                                        <i class="fas fa-chevron-down"></i>
+                                        Technical Details
+                                    </div>
+                                    <div class="dropdown_acc_content">
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_capacitance" checked>
+                                            <label for="acc_capacitance">Capacitance</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sc_urdc" checked>
+                                            <label for="acc_sc_urdc">Rated(DC) Voltage(URdc)</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_positive_tolrence" checked>
+                                            <label for="acc_positive_tolrence">Positive Tolerance</label>
+                                        </div>
+                                        <div class="filtr_wrap">
+                                            <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
+                                            <label for="acc_test_date">Nagative Tolerance</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1550,20 +1650,6 @@ function CAmegaMenu(evt, capacitorarrayMenu) {
     evt.currentTarget.className += " active";
 }
 
-// function ADmegaMenu(evt, ADmegaMenu) {
-//     var i, all_devices_tabcontent, add_devices;
-//     all_devices_tabcontent = document.getElementsByClassName("all_devices_tabcontent");
-//     for (i = 0; i < all_devices_tabcontent.length; i++) {
-//         all_devices_tabcontent[i].style.display = "none";
-//     }
-//     add_devices = document.getElementsByClassName("add_devices");
-//     for (i = 0; i < add_devices.length; i++) {
-//       add_devices[i].className = add_devices[i].className.replace(" active", "");
-//     }
-//     document.getElementById(ADmegaMenu).style.display = "flex";
-//     evt.currentTarget.className += " active";
-// }
-
 
 
 function ADmegaMenu(evt, ADmegaMenu) {
@@ -1596,6 +1682,46 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
+}
+</script>
+
+
+<script>
+var dropdown_accordion = document.getElementsByClassName("dropdown_acc_head");
+var i;
+
+for (i = 0; i < dropdown_accordion.length; i++) {
+    dropdown_accordion[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var newPanel = this.nextElementSibling;
+    if (newPanel.style.display === "none") {
+        newPanel.style.display = "block";
+    }
+    else {
+        newPanel.style.display = "none";
+    }
+    });
+}
+</script>
+
+<script>
+function clearfiltrFunction() {
+    var acc_filtr_clear = document.querySelectorAll('.groupbyfiltr .acc_filtr_check');
+    for (i = 0; i < acc_filtr_clear.length; i++) {
+        acc_filtr_clear[i].checked = false;
+    }
+}
+function collapsfiltrFunction() {
+    var acc_filtr_collaps = document.getElementsByClassName('.groupbyfiltr .dropdown_acc_content');
+    for (i = 0; i < acc_filtr_collaps.length; i++) {
+        acc_filtr_collaps[i].style.display = "none";
+    }
+}
+function expandfiltrFunction() {
+    var acc_filtr_block = document.getElementsByClassName('.groupbyfiltr .dropdown_acc_content');
+    for (i = 0; i < acc_filtr_block.length; i++) {
+        acc_filtr_block[i].style.display = "block";
+    }
 }
 </script>
 

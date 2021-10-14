@@ -404,8 +404,16 @@ main {
   font-size: 16px;
 }
 
-.result_data .groupby_elem {
+.result_data .clr_filtr_dropdown {
   margin-right: 19.5px;
+}
+
+.result_data .clr_filtr_dropdown:hover .drop_expand_menu {
+  display: block;
+}
+
+.result_data .clr_filtr_dropdown .drop_expand_menu {
+  display: none;
 }
 
 .result_data .clr_filtr_dropdown {
@@ -551,11 +559,11 @@ main {
   display: none;
 }
 
-.groupbyfiltr {
+.filtr_remove {
   position: relative;
 }
 
-.groupbyfiltr .groupbyfiltr_wrap {
+.drop_expand_menu {
   position: absolute;
   background: #fff;
   -webkit-box-shadow: 0 3px 6px #00000029;
@@ -565,9 +573,11 @@ main {
   top: 5px;
   width: 248px;
   z-index: 999;
+  max-height: 492px;
+  overflow-y: scroll;
 }
 
-.groupbyfiltr .search_dropdown_filter {
+.search_dropdown_filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -575,7 +585,7 @@ main {
   margin-bottom: 9px;
 }
 
-.groupbyfiltr .search_dropdown_filter i.fas {
+.search_dropdown_filter i.fas {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -583,7 +593,7 @@ main {
           transform: translateY(-50%);
 }
 
-.groupbyfiltr .search_dropdown_filter input {
+.search_dropdown_filter input {
   font-size: 14px;
   color: #00000066;
   padding: 5px 16px;
@@ -593,17 +603,57 @@ main {
   font-family: 'Roboto';
 }
 
-.groupbyfiltr .filtr_heading {
+.filtr_heading {
   margin-bottom: 4px;
   font-size: 12px;
 }
 
-.groupbyfiltr .filtr_heading img {
+.filtr_heading img {
   width: 9px;
 }
 
-.groupbyfiltr .dropdown_accordion {
+.dropdown_accordion {
   margin-top: 10px;
+}
+
+.dropdown_accordion .dropdown_acc_head {
+  font-size: 12px;
+  font-weight: 500;
+  color: #68686A;
+}
+
+.dropdown_accordion .dropdown_acc_head:after {
+  content: "";
+  background: #68686A;
+  padding: 0.5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4px 0 9px;
+}
+
+.dropdown_accordion .dropdown_acc_head i.fas {
+  margin-left: 0;
+  margin-right: 9px;
+}
+
+.dropdown_accordion .dropdown_acc_content {
+  font-size: 14px;
+  font-weight: 300;
+  color: #68686A;
+  margin-bottom: 28px;
+}
+
+.dropdown_accordion .dropdown_acc_content:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown_accordion .dropdown_acc_content .filtr_wrap {
+  margin-bottom: 9px;
+}
+
+.dropdown_accordion .dropdown_acc_content .filtr_wrap:last-child {
+  margin-bottom: 0;
 }
 
 /* width */
