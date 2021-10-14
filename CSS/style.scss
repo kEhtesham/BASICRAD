@@ -13,6 +13,14 @@ $resultscolor: #565656;
 $linecolor: #707070;
 $resultdataHeading: #17185A;
 $dropdowntext: #68686A;
+$arrow_color: #5B5B5B;
+$accordionheadingcolor: #171B5C;
+$ratingcolor: #FFE622;
+$ratingbordercolor: #DEC60A;
+$noratingcolor: #D9D9D9;
+$accordionborder: #F1F2F6;
+$accordion_content: #F1F2F6;
+
 
 * {
     margin: 0;
@@ -22,7 +30,8 @@ $dropdowntext: #68686A;
 body {
     font-family: Roboto;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 li {
@@ -369,14 +378,38 @@ main {
     }
 }
 
-.result_elem {
+.result_main_wrap {
+    position: relative;
+    .result_main_elem {
+        overflow-x: scroll;
+        overflow-y: visible;
+        padding-left: 212px;
+    }
+    .result_elem {
+        table-layout: fixed;
+        width: 100%;
+    }
+    .table_heading_data_elem {
+        &:after {
+            content: "";
+            background: $resultdataHeading;
+            padding: 0.5px;
+            display: block;
+            margin: 11px 0 21px -212px;
+        }
+    }        
     .table_heading_data {
         display: flex;
+        margin: 21px 0;
+        width: max-content;        
         div {
             display: flex;            
             color: $resultdataHeading;
             font-weight: 500;
             align-items: center;
+            &:first-child {
+                margin-top: -9px!important;
+            }
         }
     }
     .filtr_icon {
@@ -385,7 +418,15 @@ main {
     .part_number {
         width: 215.5px;
         padding-left: 22.5px;
-    }
+        &:first-child {
+            position: absolute;
+            left: 0;
+            width: 212px;
+            padding: 18px 0px 18px 25.5px;
+            margin-top: -17px;
+            background: #fff;
+        }
+    } 
     .SKU {
         width: 126.5px;
     }
@@ -440,20 +481,64 @@ main {
     .facilties {
         width: 123px;
     }
-
-    .row_content {
-        display: flex;
-    }
     .acc_heading {
+        padding: 21px 0;
+        margin-left: -212px;
+        &.active {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin-left: 0px;
+        }
         .acc_head {
             display: flex;
+            align-items: baseline;
             position: relative;
             padding-left: 21.5px;
+            color: $accordionheadingcolor;
+            font-weight: 500;
+            .acc_content_head_wrap {
+                text-decoration: underline;
+            }
             .fa-chevron-down {
+                color: $arrow_color;
                 position: absolute;
                 left: 0;
                 transform: rotate(-90deg);
                 transition: 0.3s ease all;
+            }
+            span {
+                font-weight: 400;
+            }
+            .radiation_test_detail {
+                color: $resultscolor;
+                font-family: Open Sans;
+                font-size: 12px;
+                font-weight: 400;
+                margin-left: 4px;
+            }
+            .ratings {
+                i.fas {
+                    color: $noratingcolor;
+                    font-size: 14px;
+                }
+                i.fas.active {
+                    color: $ratingcolor;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: $ratingbordercolor;
+                }
+            }
+            .more_review_info {
+                font-family: Open Sans;
+                font-size: 12px;
+                color: $primarybg;
+                &.no_of_reviews {
+                    margin-left: 13px;
+                }
+                &.latest_viewed {
+                    margin-left: 21px;
+                }
             }
         }
         &.active .fa-chevron-down {
@@ -462,6 +547,37 @@ main {
     }
     .acc_content {
         display: none;
+        padding-top: 80px;
+        &:before, &:after {
+            content: "";
+            background: $accordionborder;
+            padding: 0.5px 0;
+            display: flex;
+            margin-left: -212px;
+        }
+        .row_content {
+            display: flex;
+            font-size: 14px;
+            color: $arrow_color;
+            padding: 17px 0;
+            width: max-content;
+            .part_number {
+                color: $accordionheadingcolor;
+                text-decoration: underline;
+                font-weight: 400;
+                padding-left: 10px;
+            }
+            &:nth-child(even) {
+                background: $accordion_content;
+                .part_number {
+                    background: $accordion_content;
+                }
+            }
+            .updated {
+                font-family: Open Sans;
+                font-weight: 600;
+            }
+        }
     }
 }
 
@@ -552,6 +668,7 @@ main {
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 6px;
     margin-top: 10px;
 }
 

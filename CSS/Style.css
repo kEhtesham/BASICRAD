@@ -9,7 +9,8 @@
 body {
   font-family: Roboto;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 li {
@@ -429,13 +430,40 @@ main {
   margin-left: 10px;
 }
 
-.result_elem .table_heading_data {
+.result_main_wrap {
+  position: relative;
+}
+
+.result_main_wrap .result_main_elem {
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-left: 212px;
+}
+
+.result_main_wrap .result_elem {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.result_main_wrap .table_heading_data_elem:after {
+  content: "";
+  background: #17185A;
+  padding: 0.5px;
+  display: block;
+  margin: 11px 0 21px -212px;
+}
+
+.result_main_wrap .table_heading_data {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 21px 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
-.result_elem .table_heading_data div {
+.result_main_wrap .table_heading_data div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -446,102 +474,132 @@ main {
           align-items: center;
 }
 
-.result_elem .filtr_icon {
+.result_main_wrap .table_heading_data div:first-child {
+  margin-top: -9px !important;
+}
+
+.result_main_wrap .filtr_icon {
   width: 20px;
 }
 
-.result_elem .part_number {
+.result_main_wrap .part_number {
   width: 215.5px;
   padding-left: 22.5px;
 }
 
-.result_elem .SKU {
+.result_main_wrap .part_number:first-child {
+  position: absolute;
+  left: 0;
+  width: 212px;
+  padding: 18px 0px 18px 25.5px;
+  margin-top: -17px;
+  background: #fff;
+}
+
+.result_main_wrap .SKU {
   width: 126.5px;
 }
 
-.result_elem .device_type {
+.result_main_wrap .device_type {
   width: 165px;
 }
 
-.result_elem .manufacturer {
+.result_main_wrap .manufacturer {
   width: 161px;
 }
 
-.result_elem .rev {
+.result_main_wrap .rev {
   width: 86px;
 }
 
-.result_elem .rev_date {
+.result_main_wrap .rev_date {
   width: 107px;
 }
 
-.result_elem .lot_code {
+.result_main_wrap .lot_code {
   width: 112px;
 }
 
-.result_elem .capacitance {
+.result_main_wrap .capacitance {
   width: 162px;
 }
 
-.result_elem .rated_voltage {
+.result_main_wrap .rated_voltage {
   width: 161px;
 }
 
-.result_elem .positive_tolerance {
+.result_main_wrap .positive_tolerance {
   width: 142px;
 }
 
-.result_elem .negative_tolerance {
+.result_main_wrap .negative_tolerance {
   width: 122px;
 }
 
-.result_elem .radiation_test {
+.result_main_wrap .radiation_test {
   width: 162px;
 }
 
-.result_elem .test_category {
+.result_main_wrap .test_category {
   width: 165px;
 }
 
-.result_elem .source {
+.result_main_wrap .source {
   width: 102px;
 }
 
-.result_elem .test_date {
+.result_main_wrap .test_date {
   width: 117px;
 }
 
-.result_elem .test_details {
+.result_main_wrap .test_details {
   width: 125px;
 }
 
-.result_elem .result {
+.result_main_wrap .result {
   width: 108px;
 }
 
-.result_elem .documents {
+.result_main_wrap .documents {
   width: 160px;
 }
 
-.result_elem .facilties {
+.result_main_wrap .facilties {
   width: 123px;
 }
 
-.result_elem .row_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.result_main_wrap .acc_heading {
+  padding: 21px 0;
+  margin-left: -212px;
 }
 
-.result_elem .acc_heading .acc_head {
+.result_main_wrap .acc_heading.active {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  margin-left: 0px;
+}
+
+.result_main_wrap .acc_heading .acc_head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   position: relative;
   padding-left: 21.5px;
+  color: #171B5C;
+  font-weight: 500;
 }
 
-.result_elem .acc_heading .acc_head .fa-chevron-down {
+.result_main_wrap .acc_heading .acc_head .acc_content_head_wrap {
+  text-decoration: underline;
+}
+
+.result_main_wrap .acc_heading .acc_head .fa-chevron-down {
+  color: #5B5B5B;
   position: absolute;
   left: 0;
   -webkit-transform: rotate(-90deg);
@@ -550,13 +608,93 @@ main {
   transition: 0.3s ease all;
 }
 
-.result_elem .acc_heading.active .fa-chevron-down {
+.result_main_wrap .acc_heading .acc_head span {
+  font-weight: 400;
+}
+
+.result_main_wrap .acc_heading .acc_head .radiation_test_detail {
+  color: #565656;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.result_main_wrap .acc_heading .acc_head .ratings i.fas {
+  color: #D9D9D9;
+  font-size: 14px;
+}
+
+.result_main_wrap .acc_heading .acc_head .ratings i.fas.active {
+  color: #FFE622;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #DEC60A;
+}
+
+.result_main_wrap .acc_heading .acc_head .more_review_info {
+  font-family: Open Sans;
+  font-size: 12px;
+  color: #003D8B;
+}
+
+.result_main_wrap .acc_heading .acc_head .more_review_info.no_of_reviews {
+  margin-left: 13px;
+}
+
+.result_main_wrap .acc_heading .acc_head .more_review_info.latest_viewed {
+  margin-left: 21px;
+}
+
+.result_main_wrap .acc_heading.active .fa-chevron-down {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-.result_elem .acc_content {
+.result_main_wrap .acc_content {
   display: none;
+  padding-top: 80px;
+}
+
+.result_main_wrap .acc_content:before, .result_main_wrap .acc_content:after {
+  content: "";
+  background: #F1F2F6;
+  padding: 0.5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -212px;
+}
+
+.result_main_wrap .acc_content .row_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  color: #5B5B5B;
+  padding: 17px 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.result_main_wrap .acc_content .row_content .part_number {
+  color: #171B5C;
+  text-decoration: underline;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.result_main_wrap .acc_content .row_content:nth-child(even) {
+  background: #F1F2F6;
+}
+
+.result_main_wrap .acc_content .row_content:nth-child(even) .part_number {
+  background: #F1F2F6;
+}
+
+.result_main_wrap .acc_content .row_content .updated {
+  font-family: Open Sans;
+  font-weight: 600;
 }
 
 .filtr_remove {
@@ -659,6 +797,7 @@ main {
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 6px;
   margin-top: 10px;
 }
 
