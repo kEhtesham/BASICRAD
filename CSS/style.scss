@@ -196,11 +196,29 @@ main {
         padding-left: 9px;
     }        
 }
+.dropdown_wrap {
+    .dropdown_elem {
+        left: -3px;
+        .dropdown {
+            width: auto;
+            left: 0;
+            .tablinks {
+                padding: 12px 40px 12px 28px;
+                text-align: left;
+            }
+            .tabcontent {
+                overflow-y: auto;
+                flex-flow: nowrap;
+            }
+        }
+    }
+}
 .dropdown_elem {
     position: absolute;
     display: none;
     width: 900px;
     height: 530px;
+    z-index: 9999;
     .dropdown {
         background: white;
         box-shadow: 0 0 8px #00000024;
@@ -241,6 +259,9 @@ main {
         font-size: 14px;
         font-weight: 500;
         font-family: 'Roboto';
+        &.main_wrap {
+            background: #BDCDE1;
+        }
         &.active {
             background: #BDCDE1;
         }
@@ -395,7 +416,9 @@ main {
             background: $resultdataHeading;
             padding: 0.5px;
             display: block;
-            margin: 11px 0 21px -212px;
+            margin: 0 0 0 -212px;
+            position: absolute;
+            width: 100%;
         }
     }        
     .table_heading_data {
@@ -484,6 +507,7 @@ main {
     .acc_heading {
         padding: 21px 0;
         margin-left: -212px;
+        // position: absolute;
         &.active {
             position: absolute;
             left: 0;
@@ -587,6 +611,19 @@ main {
 .filtr_remove {
     position: relative;
 }
+
+.filtration {
+    .add_filters {
+        .add_filter_wrap {
+            display: none;
+        }
+        &:hover {
+            .add_filter_wrap {
+                display: block;
+            }
+        }
+    }
+}
 .drop_expand_menu {
     position: absolute;
     background: #fff;
@@ -598,6 +635,12 @@ main {
     z-index: 999;
     max-height: 492px;
     overflow-y: scroll;
+    &.add_filter_wrap {
+        z-index: 9999;
+        left: -12px;
+        text-align: left;
+        color: $primarycolor;
+    }
 }
 .search_dropdown_filter {
     display: flex;
@@ -670,6 +713,7 @@ main {
     width: 5px;
     height: 6px;
     margin-top: 10px;
+    background: $accordion_content;
 }
 
 /* Track */
