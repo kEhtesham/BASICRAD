@@ -767,6 +767,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="filtration">
             <div class="fitr_txt">Filters</div>
             <button id="add_filter" class="add_filters">
@@ -785,32 +786,32 @@
                                 Device Information
                             </div>
                             <div class="dropdown_acc_content">
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_part_number">
-                                    <label for="ad_part_number" class="getComponent">Part Number</label>
+                                <div class="filtr_wrap" >
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_part_number" onchange="filterpushFunction(this.id)" Value='Part Number' step="3">
+                                    <label for="ad_part_number">Part Number</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_sku">
-                                    <label for="ad_sku" class="getComponent">SKU</label>
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_sku" onchange="filterpushFunction(this.id)" value="SKU" step="2">
+                                    <label for="ad_sku">SKU</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_device_type">
-                                    <label for="ad_device_type" class="getComponent">Device Type</label>
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_device_type" onchange="filterpushFunction(this.id)" value="Device Type" step="2">
+                                    <label for="ad_device_type">Device Type</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_manufacturer">
-                                    <label for="ad_manufacturer" class="getComponent">Manufacturer</label>
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_manufacturer" onchange="filterpushFunction(this.id)" value="Manufacturer" step="3">
+                                    <label for="ad_manufacturer">Manufacturer</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_rev">
-                                    <label for="ad_rev" class="getComponent">Revision (Rev)</label>
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev" onchange="filterpushFunction(this.id)" value="Revision (Rev)" step="3">
+                                    <label for="ad_rev">Revision (Rev)</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_rev_date">
-                                    <label for="ad_rev_date" class="getComponent">Revision Date (Rev Date)</label>
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev_date" onchange="filterpushFunction(this.id)" value="Revision Date (Rev Date)" step="3">
+                                    <label for="ad_rev_date">Revision Date (Rev Date)</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_lot_code">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_lot_code" onchange="filterpushFunction(this.id)" value="Lot Code" step="3">
                                     <label for="ad_lot_code">Lot Code</label>
                                 </div>
                             </div>
@@ -819,28 +820,28 @@
                                 Radiation Test Details
                             </div>
                             <div class="dropdown_acc_content">
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_radiation_test">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_radiation_test" onchange="filterpushFunction(this.id)"  Value="Radiation Test">
                                     <label for="ad_radiation_test">Radiation Test</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_catagory">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_catagory" onchange="filterpushFunction(this.id)"  Value="Test Catagory">
                                     <label for="ad_catagory">Test Catagory</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_source">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_source" onchange="filterpushFunction(this.id)"  Value="Source">
                                     <label for="ad_source">Source</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_date">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_date" onchange="filterpushFunction(this.id)"  Value="Test Date">
                                     <label for="ad_test_date">Test Date</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_details">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_details" onchange="filterpushFunction(this.id)"  Value="Test Details">
                                     <label for="ad_test_details">Test Details</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_result">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_result" onchange="filterpushFunction(this.id)"  Value="Results">
                                     <label for="ad_result">Results</label>
                                 </div>
                             </div>
@@ -849,20 +850,20 @@
                                 Technical Details
                             </div>
                             <div class="dropdown_acc_content">
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_capacitance">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_capacitance" onchange="filterpushFunction(this.id)" Value="Capacitance" step="3">
                                     <label for="ad_capacitance">Capacitance</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_sc_urdc">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_sc_urdc" onchange="filterpushFunction(this.id)" Value="Rated(DC) Voltage(URdc)" step="3">
                                     <label for="ad_sc_urdc">Rated(DC) Voltage(URdc)</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_positive_tolrence">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_positive_tolrence" onchange="filterpushFunction(this.id)" Value="Positive Tolerance" step="3">
                                     <label for="ad_positive_tolrence">Positive Tolerance</label>
                                 </div>
-                                <div class="filtr_wrap" onclick="filterpushFunction()">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_date">
+                                <div class="filtr_wrap">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_test_date" onchange="filterpushFunction(this.id)" Value="Nagative Tolerance" step="3">
                                     <label for="ad_test_date">Nagative Tolerance</label>
                                 </div>
                             </div>

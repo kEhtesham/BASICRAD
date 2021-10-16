@@ -322,10 +322,6 @@ main {
   width: 600px;
 }
 
-.filteration_options {
-  display: none;
-}
-
 .filtration {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -361,6 +357,19 @@ main {
           align-items: center;
 }
 
+.filtration .filteration_options {
+  position: absolute;
+  background: white;
+  top: 26px;
+  border: 0.5px solid black;
+  padding: 12px 15px;
+  width: 157px;
+  left: 0;
+  z-index: 999;
+  color: black;
+  font-weight: 400;
+}
+
 .filtration .all_filter_listing:before {
   content: "";
   padding: 20px 0.5px;
@@ -377,6 +386,7 @@ main {
   font-size: 14px;
   font-weight: 600;
   margin-right: 13px;
+  position: relative;
 }
 
 .filtration .all_filter_listing .filter_elem .total_filter {
@@ -748,6 +758,7 @@ main {
   z-index: 999;
   max-height: 492px;
   overflow-y: scroll;
+  z-index: 9999;
 }
 
 .drop_expand_menu.add_filter_wrap {

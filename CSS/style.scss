@@ -288,14 +288,11 @@ main {
     flex-flow: wrap;
     margin: 10.5px 19.5px;
     width: 600px;
-}
+} 
 
 
 // filter
 
-.filteration_options {
-    display: none;
-}
 
 .filtration {
     display: flex;
@@ -319,6 +316,18 @@ main {
         display: flex;
         align-items: center;
     }
+    .filteration_options {
+        position: absolute;
+        background: white;
+        top: 26px;
+        border: 0.5px solid black;
+        padding: 12px 15px;
+        width: 157px;
+        left: 0;
+        z-index: 999;
+        color: black;
+        font-weight: 400;
+    }
     .all_filter_listing {
         &:before {
             content: "";
@@ -335,6 +344,7 @@ main {
             font-size: 14px;
             font-weight: 600;
             margin-right: 13px;
+            position: relative;
             .total_filter {
                 margin: 0 9px;
                 letter-spacing: 0px;
@@ -383,7 +393,7 @@ main {
             display: block;
         }
         .drop_expand_menu {
-            display: none;
+            display: none;        
         }
     }
     .clr_filtr_dropdown {
@@ -616,7 +626,7 @@ main {
     .add_filters {
         .add_filter_wrap {
             display: none;
-        }
+        } 
         &:hover {
             .add_filter_wrap {
                 display: block;
@@ -635,6 +645,7 @@ main {
     z-index: 999;
     max-height: 492px;
     overflow-y: scroll;
+    z-index: 9999;
     &.add_filter_wrap {
         z-index: 9999;
         left: -12px;

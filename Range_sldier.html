@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+section.range-slider {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  float: left;
+  text-align: center;
+}
+section.range-slider input[type=range] {
+  pointer-events: none;
+  position: absolute;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 14px;
+  background: #F1EFEF;
+  box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  -webkit-box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  overflow: hidden;
+  left: 0;
+  top: 50px;
+  width: 300px;
+  outline: none;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+section.range-slider input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 14px;
+  background: magenta;
+}
+section.range-slider input[type=range]::-moz-range-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 14px;
+  background: limegreen;
+  /* W3C */
+}
+section.range-slider input[type=range]::-ms-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -ms-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 14px;
+  border: 0;
+  background: red;
+  /* W3C */
+}
+section.range-slider input[type=range]::-moz-range-track {
+  position: relative;
+  z-index: -1;
+  background-color: black;
+  border: 0;
+}
+section.range-slider input[type=range]:last-of-type::-moz-range-track {
+  -moz-appearance: none;
+  background: none transparent;
+  border: 0;
+}
+section.range-slider input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+</style>
+</head>
+<body>
+    <section class="range-slider">
+        <span class="rangeValues"></span>
+        <input value="500" min="500" max="50000" step="500" type="range" onchange="movedFunction()" id="first_value">
+        <input value="50000" min="500" max="50000" step="500" type="range" onchange="movedFunction()" id="last_value">
+        <input type="text" id="input_first_value" onkeyup="changeangeFunction()" value="500">
+        <input type="text" id="input_last_value" onkeyup="changeangeFunction()" value="50000">
+    </section>
+<script>
+function movedFunction() {
+    var Test = document.getElementById('first_value');
+    var Test2 = document.getElementById('last_value');
+    var input_first_value = document.querySelector('#input_first_value').value;
+    var input_last_value = document.querySelector('#input_last_value').value;
+    input_first_value = Test.value;
+    console.log(input_first_value);
+    input_last_value = Test2.value;
+    console.log(Test.value);
+}
+function changeangeFunction() {
+    console.log('Hua bhai');
+}
+</script>
+</body>
+</html>
