@@ -359,15 +359,49 @@ main {
 
 .filtration .filteration_options {
   position: absolute;
-  background: white;
+  background: #fff;
   top: 26px;
-  border: 0.5px solid black;
-  padding: 12px 15px;
   width: 157px;
   left: 0;
   z-index: 999;
-  color: black;
+  color: #000;
   font-weight: 400;
+  -webkit-box-shadow: 0 3px 6px #00000029;
+          box-shadow: 0 3px 6px #00000029;
+  padding: 9.5px 8px;
+  display: none;
+}
+
+.filtration .filteration_options div {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.filtration .filteration_options .select_none {
+  margin-bottom: 11px;
+}
+
+.filtration .filteration_options .select_none:after {
+  content: "";
+  background: #68686A;
+  padding: 0.5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4px 0 9px;
+}
+
+.filtration .filteration_options .filtr_element_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filtration .filteration_options .filtr_element_wrap label {
+  margin-left: 5px;
 }
 
 .filtration .all_filter_listing:before {
@@ -387,6 +421,10 @@ main {
   font-weight: 600;
   margin-right: 13px;
   position: relative;
+}
+
+.filtration .all_filter_listing .filter_elem:hover .filteration_options {
+  display: block;
 }
 
 .filtration .all_filter_listing .filter_elem .total_filter {
@@ -608,14 +646,22 @@ main {
 .result_main_wrap .acc_heading {
   padding: 21px 0;
   margin-left: -212px;
+  position: absolute;
+}
+
+.result_main_wrap .acc_heading ~ .acc_heading_fix {
+  padding-top: 80px;
 }
 
 .result_main_wrap .acc_heading.active {
-  position: absolute;
   left: 0;
   width: 100%;
   z-index: 999;
   margin-left: 0px;
+}
+
+.result_main_wrap .acc_heading.active ~ .acc_heading_fix {
+  padding-top: 0;
 }
 
 .result_main_wrap .acc_heading .acc_head {

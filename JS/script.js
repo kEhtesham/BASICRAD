@@ -31,16 +31,12 @@ function activeMegaMenu(className, elementName, elementListClassName){
 // accordion 
 
 function myFunction() {
-    var accordion_comp = document.getElementsByClassName("acc_heading");
+    var accordionComp = document.getElementsByClassName("acc_heading");
     var k;
     
-    for (k = 0; k < accordion_comp.length; k++) {
-        accordion_comp[k].addEventListener("click", function() {
+    for (k = 0; k < accordionComp.length; k++) {
+        accordionComp[k].addEventListener("click", function() {
         this.classList.toggle("active");
-        // if(this.hasClass == "active"){
-        //     alert('active');
-        //     console.log('test');
-        // }
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
@@ -49,38 +45,15 @@ function myFunction() {
         }
         });
     }
-    // var accordion_comp_active = document.querySelectorAll(".acc_heading.active");
-    
-    // for(i=0; i < accordion_comp_active.length; i++) {
-    //     var totalHeight = accordion_comp_active[i].getBoundingClientRect().height;
-    //     totalHeight = 78 * accordion_comp_active.length;
-    //     console.log(totalHeight);
-    // }
-    // console.log(document.querySelector('body').getBoundingClientRect().height);
 }
-
-
-//Accordion height on click
-
-// function accordionheightFunction() {
-//     var accordion_comp_active = document.querySelectorAll(".acc_heading.active");
-//     var accordion_elem = document.getElementsByClassName('accordion_elem');
-
-//     for(i=0; i < accordion_comp_active.length; i++) {
-//         var totalHeight = accordion_comp_active[i].getBoundingClientRect().height;
-//         totalHeight = totalHeight + 26;
-//         accordion_elem[i].style.height = totalHeight + "px";
-//         console.log(accordion_elem);
-//     }
-// }
 
 // Dropdown accordion 
 
-var dropdown_accordion = document.getElementsByClassName("dropdown_acc_head");
+var dropdownAccordion = document.getElementsByClassName("dropdown_acc_head");
 var i;
 
-for (i = 0; i < dropdown_accordion.length; i++) {
-    dropdown_accordion[i].addEventListener("click", function() {
+for (i = 0; i < dropdownAccordion.length; i++) {
+    dropdownAccordion[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var newPanel = this.nextElementSibling;
     if (newPanel.style.display === "none") {
@@ -95,119 +68,166 @@ for (i = 0; i < dropdown_accordion.length; i++) {
 // dropdown functions 
 
 function clearfiltrFunction(event, className) {
-    var acc_filtr_clear = document.querySelectorAll('.' + className + '  .acc_filtr_check');
-    for (i = 0; i < acc_filtr_clear.length; i++) {
-        acc_filtr_clear[i].checked = false;
+    var accordionfilterClear = document.querySelectorAll('.' + className + '  .acc_filtr_check');
+    for (i = 0; i < accordionfilterClear.length; i++) {
+        accordionfilterClear[i].checked = false;
     }
 }
 function collapsfiltrFunction(event, className) {
-    var acc_filtr_collaps = document.querySelectorAll('.' + className + '  .dropdown_acc_content');
-    for (i = 0; i < acc_filtr_collaps.length; i++) {
-        acc_filtr_collaps[i].style.display = "none";
+    var accordionfilterCollaps = document.querySelectorAll('.' + className + '  .dropdown_acc_content');
+    for (i = 0; i < accordionfilterCollaps.length; i++) {
+        accordionfilterCollaps[i].style.display = "none";
     }
 }
 function expandfiltrFunction(event, className) {
-    var acc_filtr_block = document.querySelectorAll('.' + className + '  .dropdown_acc_content');
-    for (i = 0; i < acc_filtr_block.length; i++) {
-        acc_filtr_block[i].style.display = "block";
+    var accordionfilterBlock = document.querySelectorAll('.' + className + '  .dropdown_acc_content');
+    for (i = 0; i < accordionfilterBlock.length; i++) {
+        accordionfilterBlock[i].style.display = "block";
     }
 }
 
 
 // filter append
 
-function filterpushFunction(func_ID) {
-    // debugger
-    var FilterAdded = document.getElementById(func_ID);
+function filterpushFunction(filterId) {
+    // console.log('filterId', filterId);
+    var FilterAdded = document.getElementById(filterId);
+    var allfilterListing = document.getElementsByClassName('all_filter_listing');
     if (FilterAdded.checked == true) {
-        var all_filter_listing = document.getElementsByClassName('all_filter_listing');
-        var input_loop = document.getElementById(func_ID).step;
+        var inputLoop = document.getElementById(filterId).step;
         
-            var filter_elem = document.createElement("div");
-            filter_elem.setAttribute('class','filter_elem');
-                var filtr_options = document.createElement("div");
-                filtr_options.setAttribute('class','filtr_options');
+            var filterElement = document.createElement("div");
+                filterElement.setAttribute('class','filter_elem '+filterId+'-chk');
+            var filterOptions = document.createElement("div");
+                filterOptions.setAttribute('class','filtr_options');
 
-                var element_content = document.getElementById(func_ID).value;
-                // console.log(func_ID);
-                filtr_options.appendChild(document.createTextNode(element_content));
+            var elementContent = document.getElementById(filterId).value;
+                filterOptions.appendChild(document.createTextNode(elementContent));
 
-            filter_elem.appendChild(filtr_options);
-                var total_filter = document.createElement("div");
-                total_filter.setAttribute('class','total_filter');
-                total_filter.appendChild(document.createTextNode('(All)'));
-            filtr_options.appendChild(total_filter);
-                var caret_down = document.createElement("i");
-                caret_down.setAttribute('class','fas fa-caret-down');
-            filtr_options.appendChild(caret_down);
-                var filteration_options = document.createElement("div");
-                filteration_options.setAttribute('class','filteration_options');
-            filter_elem.appendChild(filteration_options);
+                filterElement.appendChild(filterOptions);
+            var totalFilter = document.createElement("div");
+                totalFilter.setAttribute('class','total_filter');
+                totalFilter.appendChild(document.createTextNode('(All)'));
+                filterOptions.appendChild(totalFilter);
+            var caretDown = document.createElement("i");
+                caretDown.setAttribute('class','fas fa-caret-down');
+                filterOptions.appendChild(caretDown);
+            var filterationOptions = document.createElement("div");
+                filterationOptions.setAttribute('class','filteration_options');
+            filterElement.appendChild(filterationOptions);
 
-        if (FilterAdded.classList.contains('dropdown_push')){
+            if (FilterAdded.classList.contains('dropdown_push')){
+                    
+                    // filterationOptions
+
+                        var selectall_filtr = document.createElement("div");
+                        selectall_filtr.appendChild(document.createTextNode('Select All'));
+                        selectall_filtr.setAttribute('class','select_all');
+
+                        filterationOptions.appendChild(selectall_filtr);
+
+                        var selectnone_filtr = document.createElement("div");
+                        selectnone_filtr.appendChild(document.createTextNode('Select None'));
+                        selectnone_filtr.setAttribute('class','select_none');
+
+                        filterationOptions.appendChild(selectnone_filtr);
+                    
+                        var innerfilterWrap = document.createElement("div");
+                        innerfilterWrap.setAttribute('class','filtr_wrap');
                 
-                // filteration_options
+                        filterationOptions.appendChild(innerfilterWrap);
 
-                    var selectall_filtr = document.createElement("div");
-                    selectall_filtr.appendChild(document.createTextNode('Select All'));
-                    selectall_filtr.setAttribute('class','select_all');
+                        for (k=0; k<inputLoop; k++) {
+                            var filterwrapParent = document.createElement("div");
+                            filterwrapParent.setAttribute('class','filtr_element_wrap');
 
-                    filteration_options.appendChild(selectall_filtr);
+                            innerfilterWrap.appendChild(filterwrapParent);
 
-                    var selectnone_filtr = document.createElement("div");
-                    selectnone_filtr.appendChild(document.createTextNode('Select None'));
-                    selectnone_filtr.setAttribute('class','select_none');
+                            var inputinnerFilter = document.createElement("input");
+                            
+                            var elementArray = ["Maxim", "AVX", "Yageo"];
+                            inputinnerFilter.setAttribute('type','checkbox');
+                            inputinnerFilter.setAttribute('id', 'id'+ k);
+                            filterwrapParent.appendChild(inputinnerFilter);
 
-                    filteration_options.appendChild(selectnone_filtr);
+                            var labelinnerFilter = document.createElement("label");
+                            labelinnerFilter.setAttribute('for','id'+k);
+                            labelinnerFilter.innerHTML=elementArray[k];
+                            filterwrapParent.appendChild(labelinnerFilter);
+                        }
+
+                    allfilterListing[0].appendChild(filterElement);
+            }
+            else {
+                let id = () => {
+                    return Math.floor((1 + Math.random()) * 0x10000)
+                        .toString(16)
+                        .substring(1);
+                }
+                    var uniqueId = id();
                 
-                    var inner_filtr_wrap = document.createElement("div");
-                    inner_filtr_wrap.setAttribute('class','filtr_wrap');
-            
-                    filteration_options.appendChild(inner_filtr_wrap);
+                    var rangeInnerFilter = document.createElement("input");
+                    rangeInnerFilter.setAttribute('type','range');
+                    rangeInnerFilter.setAttribute('class','rangefirstValue');
+                    var newrangeID = 'firstRnge-' + uniqueId;
+                    rangeInnerFilter.setAttribute('id', newrangeID);
+                    rangeInnerFilter.setAttribute('onChange','getRangeFunction(this.id)');
+                    filterationOptions.appendChild(rangeInnerFilter);
 
-                    for (k=0; k<input_loop; k++) {
-                        var filtr_wrap_parent = document.createElement("div");
-                        filtr_wrap_parent.setAttribute('class','filtr_element_wrap');
+                    var lastrangeInnerFilter = document.createElement("input");
+                    lastrangeInnerFilter.setAttribute('type','range');
+                    lastrangeInnerFilter.setAttribute('class','rangelastValue');
+                    var newrangeID = 'lastRnge-' + uniqueId;
+                    lastrangeInnerFilter.setAttribute('id', newrangeID);
+                    lastrangeInnerFilter.setAttribute('onChange','getlastRangeFunction(this.id)');
+                    filterationOptions.appendChild(lastrangeInnerFilter);
+                    
+                    var firstrangeValue = document.createElement("input");
+                    firstrangeValue.setAttribute('value', '50');
+                    var newinputID = 'fstRnge-' + uniqueId;
+                    firstrangeValue.setAttribute('class','inputfirstValue');
+                    firstrangeValue.setAttribute('id', newinputID);
+                    firstrangeValue.setAttribute('onkeyup','getinputFunction(this.id)');
+                    filterationOptions.appendChild(firstrangeValue);
 
-                        inner_filtr_wrap.appendChild(filtr_wrap_parent);
+                    var lastrangeValue = document.createElement("input");
+                    lastrangeValue.setAttribute('value', '50');
+                    var newinputID = 'lstRnge-' + uniqueId;
+                    lastrangeValue.setAttribute('class','inputfirstValue');
+                    lastrangeValue.setAttribute('id', newinputID);
+                    lastrangeValue.setAttribute('onkeyup','getinputFunction(this.id)');
+                    filterationOptions.appendChild(lastrangeValue);
 
-                        var input_innerFilter = document.createElement("input");
-                        
-                        var element_array = ["Maxim", "AVX", "Yageo"];
-                        input_innerFilter.setAttribute('type','checkbox');
-                        input_innerFilter.setAttribute('id', 'id'+k);
-                        filtr_wrap_parent.appendChild(input_innerFilter);
-
-                        var label_innerFilter = document.createElement("label");
-                        label_innerFilter.setAttribute('for','id'+k);
-                        label_innerFilter.innerHTML=element_array[k];
-                        filtr_wrap_parent.appendChild(label_innerFilter);
-                    }
-
-                    console.log(filteration_options);
-
-            all_filter_listing[0].appendChild(filter_elem);
-        }
-        
-        else {
-            var range_innerFilter = document.createElement("input");
-            range_innerFilter.setAttribute('type','range');
-            filteration_options.appendChild(range_innerFilter);
-            filter_elem.appendChild(filteration_options);
-            all_filter_listing[0].appendChild(filter_elem);
-            console.log(all_filter_listing[0]);
-        }
+                filterElement.appendChild(filterationOptions);
+            allfilterListing[0].appendChild(filterElement);
+            }
     }
     else {
-        console.log('its not a dropdown');
+        var removeFilter = document.getElementsByClassName(filterId+"-chk");
+        removeFilter[0].remove();
     }
 }
 
 
-// filteration_options
+function getRangeFunction(functionId) {
+    var getrangeValue = document.getElementById(functionId).value;
+    // var inputfirstValue = document.getElementById(functionId).nextSibling;
+    // inputfirstValue.value=getrangeValue;
+    var inputfirstnextsibling = document.getElementById(functionId).nextSibling;
+    var inputfirstValue = inputfirstnextsibling.nextSibling;
+    inputfirstValue.value=getrangeValue;
+}
 
+function getlastRangeFunction(lastrangeId) {
+    var getlastrangeValue = document.getElementById(lastrangeId).value;
+    var inputlastnextsibling = document.getElementById(lastrangeId).nextSibling;
+    var inputlastValue = inputlastnextsibling.nextSibling;
+    inputlastValue.value = getlastrangeValue;
+}
 
-/*
-    <input value="500" min="500" max="50000" step="500" type="range" onchange="movedFunction()" id="first_value">
-    <input value="50000" min="500" max="50000" step="500" type="range" onchange="movedFunction()" id="last_value">
-*/
+function getinputFunction(inputId) {
+    var getinputValue = document.getElementById(inputId).value;
+    var pushpriviousValue = document.getElementById(inputId).previousSibling;
+    var priviousinputValue = pushpriviousValue.previousSibling;
+    priviousinputValue.value = getinputValue;
+}

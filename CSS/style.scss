@@ -318,15 +318,37 @@ main {
     }
     .filteration_options {
         position: absolute;
-        background: white;
+        background: #fff;
         top: 26px;
-        border: 0.5px solid black;
-        padding: 12px 15px;
         width: 157px;
         left: 0;
         z-index: 999;
-        color: black;
+        color: #000; 
         font-weight: 400;
+        box-shadow: 0 3px 6px #00000029;
+        padding: 9.5px 8px;
+        display: none;
+        div {
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+        .select_none {
+            margin-bottom: 11px;
+            &:after {
+                content: "";
+                background: $dropdowntext;
+                padding: 0.5px 0;
+                display: flex;
+                margin: 4px 0 9px;
+            }
+        }
+        .filtr_element_wrap {
+            display: flex;
+            align-items: center;
+            label {
+                margin-left: 5px;
+            }
+        }
     }
     .all_filter_listing {
         &:before {
@@ -345,6 +367,9 @@ main {
             font-weight: 600;
             margin-right: 13px;
             position: relative;
+            &:hover .filteration_options {
+                display: block;
+            }
             .total_filter {
                 margin: 0 9px;
                 letter-spacing: 0px;
@@ -517,13 +542,18 @@ main {
     .acc_heading {
         padding: 21px 0;
         margin-left: -212px;
-        // position: absolute;
+        position: absolute;
+        &~.acc_heading_fix {
+            padding-top: 80px;
+        }
         &.active {
-            position: absolute;
             left: 0;
             width: 100%;
             z-index: 999;
             margin-left: 0px;
+            &~.acc_heading_fix {
+                padding-top: 0;
+            }
         }
         .acc_head {
             display: flex;
