@@ -7,9 +7,15 @@
     <title>BASICARD</title>
     <link rel="stylesheet" href="CSS/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
     <script src="JS/script.js"></script>    
 </head>
-<body  onload="myFunction()">
+<body  onload="loadJsFunction()">
     <!-- Header -->
     <header>
         <div class="container">
@@ -153,11 +159,6 @@
                                 </div>
                             </div>
                         </li>
-                        <!-- <select name="" id="">
-                            <option value="" Selected disabled>All Devices</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                        </select> -->
                     </ul>
                     <form action="">
                         <input type="text" class="search_item" placeholder="Search for device category, part number, or tech specs">
@@ -182,6 +183,7 @@
             </div>
         </div>
     </header>
+
     <!-- Header End -->
     <main>
         <div class="breadcrums">
@@ -772,14 +774,14 @@
             <div class="fitr_txt">Filters</div>
             <button id="add_filter" class="add_filters">
                 <i class="fas fa-plus"></i>Add Filter
-                <div class="add_filter_elem filtr_remove">
+                <div class="add_filter_elem filter_remove">
                     <div class="add_filter_wrap drop_expand_menu">
                         <div class="search_dropdown_filter">
                             <input type="text" placeholder="Search available filters"><i class="fas fa-search"></i>
                         </div>
-                        <div class="filtr_heading" id="clear_filtr" onclick="clearfiltrFunction(event, 'groupbyfiltr_wrap')"><img src="Images/cancel.svg" alt="Clear"> Clear all groups</div>
-                        <div class="filtr_heading" id="collapse_grp" onclick="collapsfiltrFunction(event, 'groupbyfiltr_wrap')"><img src="Images/Collabs.svg" alt="Collabs"> Collapse all groups</div>
-                        <div class="filtr_heading" id="expande_grp" onclick="expandfiltrFunction(event, 'groupbyfiltr_wrap')"><img src="Images/Expand.svg" alt="Expand"> Expand all groups</div>
+                        <div class="filtr_heading" id="clear_filtr" onclick="clearFilterFunction(event, 'groupbyfiltr_wrap')"><img src="Images/cancel.svg" alt="Clear"> Clear all groups</div>
+                        <div class="filtr_heading" id="collapse_grp" onclick="collapsFilterFunction(event, 'groupbyfiltr_wrap')"><img src="Images/Collabs.svg" alt="Collabs"> Collapse all groups</div>
+                        <div class="filtr_heading" id="expande_grp" onclick="expandFilterFunction(event, 'groupbyfiltr_wrap')"><img src="Images/Expand.svg" alt="Expand"> Expand all groups</div>
                         <div class="dropdown_accordion">
                             <div class="dropdown_acc_head" style="display: block;">
                                 <i class="fas fa-chevron-down"></i>
@@ -787,31 +789,31 @@
                             </div>
                             <div class="dropdown_acc_content">
                                 <div class="filtr_wrap" >
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_part_number" onchange="filterpushFunction(this.id)" Value='Part Number' step="3">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_part_number" onchange="filterPushFunction(this.id)" Value='Part Number' step="3">
                                     <label for="ad_part_number">Part Number</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_sku" onchange="filterpushFunction(this.id)" value="SKU" step="2">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_sku" onchange="filterPushFunction(this.id)" value="SKU" step="2">
                                     <label for="ad_sku">SKU</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_device_type" onchange="filterpushFunction(this.id)" value="Device Type" step="2">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_device_type" onchange="filterPushFunction(this.id)" value="Device Type" step="2">
                                     <label for="ad_device_type">Device Type</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_manufacturer" onchange="filterpushFunction(this.id)" value="Manufacturer" step="3">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_manufacturer" onchange="filterPushFunction(this.id)" value="Manufacturer" step="3">
                                     <label for="ad_manufacturer">Manufacturer</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev" onchange="filterpushFunction(this.id)" value="Revision (Rev)" step="3">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev" onchange="filterPushFunction(this.id)" value="Revision (Rev)" step="3">
                                     <label for="ad_rev">Revision (Rev)</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev_date" onchange="filterpushFunction(this.id)" value="Revision Date (Rev Date)" step="3">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_rev_date" onchange="filterPushFunction(this.id)" value="Revision Date (Rev Date)" step="3">
                                     <label for="ad_rev_date">Revision Date (Rev Date)</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_lot_code" onchange="filterpushFunction(this.id)" value="Lot Code" step="3">
+                                    <input type="checkbox" class="acc_filtr_check dropdown_push" name="Filter" id="ad_lot_code" onchange="filterPushFunction(this.id)" value="Lot Code" step="3">
                                     <label for="ad_lot_code">Lot Code</label>
                                 </div>
                             </div>
@@ -821,27 +823,27 @@
                             </div>
                             <div class="dropdown_acc_content">
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_radiation_test" onchange="filterpushFunction(this.id)"  Value="Radiation Test">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_radiation_test" onchange="filterPushFunction(this.id)"  Value="Radiation Test">
                                     <label for="ad_radiation_test">Radiation Test</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_catagory" onchange="filterpushFunction(this.id)"  Value="Test Catagory">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_catagory" onchange="filterPushFunction(this.id)"  Value="Test Catagory">
                                     <label for="ad_catagory">Test Catagory</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_source" onchange="filterpushFunction(this.id)"  Value="Source">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_source" onchange="filterPushFunction(this.id)"  Value="Source">
                                     <label for="ad_source">Source</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_date" onchange="filterpushFunction(this.id)"  Value="Test Date">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_test_date" onchange="filterPushFunction(this.id)"  Value="Test Date">
                                     <label for="ad_test_date">Test Date</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_test_details" onchange="filterpushFunction(this.id)"  Value="Test Details">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_test_details" onchange="filterPushFunction(this.id)"  Value="Test Details">
                                     <label for="ad_test_details">Test Details</label>
                                 </div>
                                 <div class="filtr_wrap">
-                                    <input type="checkbox" class="acc_filtr_check" name="Filter" id="ad_result" onchange="filterpushFunction(this.id)"  Value="Results">
+                                    <input type="checkbox" class="acc_filtr_check range_slider_push" name="Filter" id="ad_result" onchange="filterPushFunction(this.id)"  Value="Results">
                                     <label for="ad_result">Results</label>
                                 </div>
                             </div>
@@ -886,7 +888,7 @@
                     </div>
                     <div class="groupby_elem clr_filtr_dropdown">
                         Group By<i class="fas fa-caret-down"></i>
-                        <div class="groupbyfiltr filtr_remove">
+                        <div class="groupbyfiltr filter_remove">
                             <div class="groupbyfiltr_wrap drop_expand_menu">
                                 <div class="search_dropdown_filter">
                                     <input type="text" placeholder="Search available filters" id="searchFunction"><i class="fas fa-search"></i>
@@ -987,7 +989,7 @@
                     </div>
                     <div class="column_elem clr_filtr_dropdown">
                         Columns<i class="fas fa-caret-down"></i>
-                        <div class="column filtr_remove">
+                        <div class="column filter_remove">
                             <div class="column_elem_wrap drop_expand_menu">
                                 <div class="search_dropdown_filter">
                                     <input type="text" placeholder="Search available filters"><i class="fas fa-search"></i>
@@ -1114,281 +1116,17 @@
                                 <div class="facilties">Facility<img src="Images/filter_wht.svg" alt="Filter" class="filtr_icon"></div>
                             </div>
                         </div>
-                        <div class="accordion_elem">
-                            <div class="acc_heading active">
-                                <div class="acc_head acc_head_top">
-                                    <i class="fas fa-chevron-down"></i>
-                                    <div class="acc_content_head_wrap">MAX3453EEUD <span>| SKU:XXXXXXXXX</span></div>
-                                    <div class="radiation_test_detail">(3 Radiation Tests)</div>
-                                </div>
-                                <div class="acc_head acc_head_bottom">
-                                    <div class="ratings">
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="no_of_reviews more_review_info">
-                                        (30 Rad Reviews)
-                                    </div>
-                                    <div class="latest_viewed more_review_info">
-                                        View on octopart
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc_content" style="display: block;">
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">1.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">50 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">NASA</div>
-                                    <div class="test_date updated">7/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">PASS</div>
-                                    <div class="documents updated">Radiation Test</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">22 nF</div>
-                                    <div class="rated_voltage updated">20 V</div>
-                                    <div class="positive_tolerance updated">20%</div>
-                                    <div class="negative_tolerance updated">20%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">Blue Origin</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">100 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Total Ionizing Dose</div>
-                                    <div class="test_category updated">Total Ionizing Dose</div>
-                                    <div class="source updated">NSRC</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                            </div>
-                            <div class="acc_heading_fix"></div>
+                        <div class="accordion_elem" id="accordion_elem_first">
                         </div>
-                        <div class="accordion_elem">
-                            <div class="acc_heading active">
-                                <div class="acc_head acc_head_top">
-                                    <i class="fas fa-chevron-down"></i>
-                                    <div class="acc_content_head_wrap">MAX3453EEUD <span>| SKU:XXXXXXXXX</span></div>
-                                    <div class="radiation_test_detail">(3 Radiation Tests)</div>
-                                </div>
-                                <div class="acc_head acc_head_bottom">
-                                    <div class="ratings">
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star active"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="no_of_reviews more_review_info">
-                                        (30 Rad Reviews)
-                                    </div>
-                                    <div class="latest_viewed more_review_info">
-                                        View on octopart
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc_content" style="display: block;">
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">1.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">50 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">NASA</div>
-                                    <div class="test_date updated">7/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">PASS</div>
-                                    <div class="documents updated">Radiation Test</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">22 nF</div>
-                                    <div class="rated_voltage updated">20 V</div>
-                                    <div class="positive_tolerance updated">20%</div>
-                                    <div class="negative_tolerance updated">20%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">Blue Origin</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">100 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Total Ionizing Dose</div>
-                                    <div class="test_category updated">Total Ionizing Dose</div>
-                                    <div class="source updated">NSRC</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                            </div>
-                            <div class="acc_heading_fix"></div>
+                        <div class="accordion_elem" id="accordion_elem_second">
                         </div>
-                        <div class="accordion_elem">
-                            <div class="acc_heading active">
-                                <div class="acc_head acc_head_top">
-                                    <i class="fas fa-chevron-down"></i>
-                                    <div class="acc_content_head_wrap">MAX3453EEUD <span>| SKU:XXXXXXXXX</span></div>
-                                    <div class="radiation_test_detail">(3 Radiation Tests)</div>
-                                </div>
-                                <div class="acc_head acc_head_bottom">
-                                    <div class="ratings">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="no_of_reviews more_review_info">
-                                        (30 Rad Reviews)
-                                    </div>
-                                    <div class="latest_viewed more_review_info">
-                                        View on octopart
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="acc_content" style="display: block;">
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">1.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">50 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">NASA</div>
-                                    <div class="test_date updated">7/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">PASS</div>
-                                    <div class="documents updated">Radiation Test</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer updated">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">22 nF</div>
-                                    <div class="rated_voltage updated">20 V</div>
-                                    <div class="positive_tolerance updated">20%</div>
-                                    <div class="negative_tolerance updated">20%</div>
-                                    <div class="radiation_test updated">Single Event Latch-up</div>
-                                    <div class="test_category updated">Single Event Upset</div>
-                                    <div class="source updated">Blue Origin</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                                <div class="row_content">
-                                    <div class="part_number">MAX3453EEUD</div>
-                                    <div class="SKU">SKU-02</div>
-                                    <div class="device_type">Capacity Array</div>
-                                    <div class="manufacturer ">Maxim</div>
-                                    <div class="rev">2.0</div>
-                                    <div class="rev_date">7/7/2000</div>
-                                    <div class="lot_code">XXXX</div>
-                                    <div class="capacitance updated">10 nF</div>
-                                    <div class="rated_voltage updated">100 V</div>
-                                    <div class="positive_tolerance updated">10%</div>
-                                    <div class="negative_tolerance updated">10%</div>
-                                    <div class="radiation_test updated">Total Ionizing Dose</div>
-                                    <div class="test_category updated">Total Ionizing Dose</div>
-                                    <div class="source updated">NSRC</div>
-                                    <div class="test_date updated">1/12/2006</div>
-                                    <div class="test_details updated">22k rads</div>
-                                    <div class="result updated">FAIL</div>
-                                    <div class="documents updated">2 Documents</div>
-                                    <div class="facilities updated">University of texas</div>
-                                </div>
-                            </div>
-                            <div class="acc_heading_fix"></div>
+                        <div class="accordion_elem" id="accordion_elem_third">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
+<div id="slider-range-"></div>
 </body>
 </html>

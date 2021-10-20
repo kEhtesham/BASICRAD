@@ -226,7 +226,8 @@ main {
         width: 900px;
         left: 90px;
         top: 10px;
-        height: 450px;
+        height: 530px;
+        overflow-y: auto;
         display: flex;
         li {
             margin: 16px 71.5px 16px 33.5px;
@@ -551,7 +552,7 @@ main {
             width: 100%;
             z-index: 999;
             margin-left: 0px;
-            &~.acc_heading_fix {git 
+            &~.acc_heading_fix {
                 padding-top: 0;
             }
         }
@@ -586,6 +587,7 @@ main {
                 i.fas {
                     color: $noratingcolor;
                     font-size: 14px;
+                    margin-right: 3px;
                 }
                 i.fas.active {
                     color: $ratingcolor;
@@ -648,7 +650,7 @@ main {
 
 // filter
 
-.filtr_remove {
+.filter_remove {
     position: relative;
 }
 
