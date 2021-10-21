@@ -770,3 +770,34 @@ main {
     border-radius: 5px;
     margin-top: 10px;
 }
+
+
+
+
+
+// range slider design : just for testing 
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    background: #305595!important;
+    border-radius: 100%;
+    box-shadow: 1px 1px 0 0 #00000052;
+    border:0!important;
+}
+.all_filter_listing .filteration_options {
+    width: 300px;
+}
+.all_filter_listing .filteration_options .ui-slider-range.ui-corner-all.ui-widget-header {
+    background: #769ec5;
+    font-size: 18px;
+}
+.range_value_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.range_value_wrap input {
+    width: 70px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    margin-top: 11px;
+}
