@@ -628,6 +628,7 @@ main {
         padding: 21px 0;
         margin-left: -212px;
         position: absolute;
+        width: 100%;
         &~.acc_heading_fix {
             padding-top: 80px;
         }
@@ -649,6 +650,7 @@ main {
             font-weight: 500;
             .acc_content_head_wrap {
                 text-decoration: underline;
+                display: flex;
             }
             .fa-chevron-down {
                 color: $arrow_color;
@@ -726,6 +728,9 @@ main {
             .updated {
                 font-family: Open Sans;
                 font-weight: 600;
+            }
+            .facilities {
+                width: 123px;
             }
         }
     }

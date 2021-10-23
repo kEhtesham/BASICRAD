@@ -761,6 +761,7 @@ main {
   padding: 21px 0;
   margin-left: -212px;
   position: absolute;
+  width: 100%;
 }
 
 .result_main_wrap .acc_heading ~ .acc_heading_fix {
@@ -793,6 +794,9 @@ main {
 
 .result_main_wrap .acc_heading .acc_head .acc_content_head_wrap {
   text-decoration: underline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .result_main_wrap .acc_heading .acc_head .fa-chevron-down {
@@ -893,6 +897,10 @@ main {
 .result_main_wrap .acc_content .row_content .updated {
   font-family: Open Sans;
   font-weight: 600;
+}
+
+.result_main_wrap .acc_content .row_content .facilities {
+  width: 123px;
 }
 
 .filter_remove {
