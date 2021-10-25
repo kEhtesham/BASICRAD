@@ -100,7 +100,7 @@ header {
         }
         input {
             width: 700px;
-            padding: 11.5px 37px 11.5px 19px;
+            padding: 11px 37px 11px 19px;
             border: 0;
             outline: none;
             font-size: 18px;
@@ -299,6 +299,15 @@ main {
     display: flex;
     align-items: center;
     margin: 35px 0 31px;
+    .range_value_wrap {
+        display: flex;
+        justify-content: space-between;
+        input{
+            width: 100px;
+            margin-top: 40px;
+        }
+    }
+    
     .fitr_txt {
         font-size: 18px;
         font-weight: 500;
@@ -320,7 +329,7 @@ main {
     .filteration_options {
         position: absolute;
         background: #fff;
-        top: 26px;
+        top: 24px;
         width: 157px;
         left: 0;
         z-index: 999;
@@ -333,6 +342,9 @@ main {
         div {
             margin-bottom: 4px;
             font-size: 12px;
+        }
+        .filtr_options, .add_filter_elem {
+            margin-bottom: 0;
         }
         .select_none {
             margin-bottom: 11px;

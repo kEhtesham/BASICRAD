@@ -186,6 +186,7 @@ function filterPushFunction(filterId) {
 
                 const firstRangeValue = document.createElement("input");
                 firstRangeValue.setAttribute('type', 'text');
+                const newlastClassFirst = "first";
                 const newfirstInputID = 'first-' + filterId;                
                 firstRangeValue.setAttribute('id', newfirstInputID);
                 firstRangeValue.setAttribute('min', '10');
@@ -193,6 +194,7 @@ function filterPushFunction(filterId) {
 
                 const lastRangeValue = document.createElement("input");
                 lastRangeValue.setAttribute('type', 'text');
+                const lastClassFirseLast = 'last-';
                 const newlastInputID = 'last-' + filterId;
                 lastRangeValue.setAttribute('max', '22');
                 lastRangeValue.setAttribute('id', newlastInputID);
@@ -238,10 +240,11 @@ function accordionFunction() {
         r[a.partNumber].push(a);
         return r;
     }, Object.create(null));
-    console.log('aa_>', result);
 
     for(a=0; a< Object.keys(result).length; a++) {
-        console.log(a, result[Object.keys(result)[a]]);
+        
+        // console.log('aa_>', accordionData[0].results[Object]);
+
         const adAccButtonElement = document.createElement('div');
          adAccButtonElement.setAttribute('class', 'accordion_elem');
          adAccButtonElement.setAttribute('id', 'accordion_elem_' + a);
@@ -273,7 +276,7 @@ function accordionFunction() {
                             const acordionRadiationinfo = document.createElement('div');
                             acordionRadiationinfo.setAttribute('class', 'radiation_test_detail');
                             accHead.appendChild(acordionRadiationinfo);
-                            acordionRadiationinfo.appendChild(document.createTextNode('(' + '3 ' + 'Radiation Tests)'));
+                            // acordionRadiationinfo.appendChild(document.createTextNode('(' + '3 ' + 'Radiation Tests)'));
 
                             //accordion sub heading content
                             const accSubHead = document.createElement('div');
@@ -304,51 +307,78 @@ function accordionFunction() {
                                 latestView.appendChild(document.createTextNode('View on ' + 'octopart'));
                                 accSubHead.appendChild(latestView);
 
-                                        const accContent = document.createElement('div');
+                                    const accContent = document.createElement('div');
             accContent.setAttribute('class', 'acc_content');
             accContent.setAttribute('style', 'display:block');
             adAccButtonElement.appendChild(accContent);
             
             const rowInnerContentClass= [ {class: 'part_number', key: 'partNumber', value: ''},
-            {class: 'SKU', key: '', value: 'SKU-02'}, 
-            {class: 'device_type', key: 'deviceType', value: ''},
-            {class: 'manufacturer updated', key: 'manufacturer', value: ''},
-            {class: 'rev', key: 'revisionNumber', value: ''},
-            {class: 'rev_date', key: 'revisionDate', value: ''},
-            {class: 'lot_code', key: 'lotCode', value: ''},
-            {class: 'capacitance updated', key: 'capacitance', value: ''},
-            {class: 'rated_voltage updated', key: 'ratedVoltage', value: ''},
-            {class: 'positive_tolerance updated', key: 'positiveTolerance', value: ''},
-            {class: 'negative_tolerance updated', key: 'negativeTolerance', value: ''},
-            {class: 'radiation_test updated', key: 'ratedVoltage', value: ''},
-            {class: 'test_category updated', key: 'testCategory', value: ''},
-            {class: 'source updated', key: 'source', value: ''},
-            {class: 'test_date updated', key: 'testDate', value: ''},
-            {class: 'test_details updated', key: 'testDetails', value: ''},
-            {class: 'result updated', key: 'testResult', value: ''}
-        ];
-            console.log('Object.keys(result)[a]', result[Object.keys(result)[a]].length);
+                {class: 'SKU', key: '', value: 'SKU-02'}, 
+                {class: 'device_type', key: 'deviceType', value: ''},
+                {class: 'manufacturer updated', key: 'manufacturer', value: ''},
+                {class: 'rev', key: 'revisionNumber', value: ''},
+                {class: 'rev_date', key: 'revisionDate', value: ''},
+                {class: 'lot_code', key: 'lotCode', value: ''},
+                {class: 'capacitance updated', key: 'capacitance', value: ''},
+                {class: 'rated_voltage updated', key: 'ratedVoltage', value: ''},
+                {class: 'positive_tolerance updated', key: 'positiveTolerance', value: ''},
+                {class: 'negative_tolerance updated', key: 'negativeTolerance', value: ''},
+                {class: 'radiation_test updated', key: 'ratedVoltage', value: ''},
+                {class: 'test_category updated', key: 'testCategory', value: ''},
+                {class: 'source updated', key: 'source', value: ''},
+                {class: 'test_date updated', key: 'testDate', value: ''},
+                {class: 'test_details updated', key: 'testDetails', value: ''},
+                {class: 'result updated', key: 'testResult', value: ''},
+                {class: 'documents updated', key: 'testDocuments', value: ''},
+                {class: 'testFacility updated', key: 'testFacility', value: ''}
+            ];
+
+            const rowInnerDocumentClass= [
+                {class: 'file_name', key: 'fileName', value: ''},
+                {class: 'file_URL', key: 'link', value: ''}
+            ];
+
+
+            // console.log(rowInnerDocumentClass.length);
+
+            // acordionRadiationinfo.appendChild(document.createTextNode('(' + result[Object.keys(result)[a]].length + 'Radiation Tests)'));
+
             for (i=0; i< result[Object.keys(result)[a]].length; i++) {
+                
                 const rowContent = document.createElement('div');
                 rowContent.setAttribute('class', 'row_content');
                 accContent.appendChild(rowContent);
+                for (w=0; w<rowInnerDocumentClass.length; w++) {
+                    const rowInnerDocuments= document.createElement('a');
+                    rowInnerDocuments.setAttribute('class', rowInnerDocumentClass[0].class);
+                    rowInnerDocuments.setAttribute('href', result[Object.keys(result)[a]][i][rowInnerDocumentClass[1].key])
+                    console.log(result[Object.keys(result)[a]][i][rowInnerDocumentClass[1].key]);
+                }
+
                 for (m=0; m< rowInnerContentClass.length; m++) {
-                        const rowInnerContent= document.createElement('div');
+
+                    const rowInnerContent= document.createElement('div');
                     rowInnerContent.setAttribute('class', rowInnerContentClass[m].class);
                     if(rowInnerContentClass[m].key === ''){
                         rowInnerContent.appendChild(document.createTextNode(rowInnerContentClass[m].value));
                     } else {
                         rowInnerContent.appendChild(document.createTextNode(result[Object.keys(result)[a]][i][rowInnerContentClass[m].key]));
+
+                        // for (k=0; k< rowInnerDocumentClass.length; k++) {
+                        //     const getUrlPath = result[Object.keys(result)[a]][i][rowInnerContentClass[17].key];
+                        //     const rowInnerDocuments= document.createElement('a');
+                        //     rowInnerDocuments.setAttribute('class', 'file_name');
+                        //     rowInnerDocuments.setAttribute('href', getUrlPath[k][rowInnerDocumentClass[k].key]);
+                        //     console.log( rowInnerDocuments[m] );
+                        //     rowInnerDocuments.appendChild(document.createTextNode( getUrlPath[k][rowInnerDocumentClass[k].key] ));
+                        // }
+
+                        // rowInnerContent.appendChild(document.createTextNode(result[Object.keys(result)[a]][i][rowInnerDocuments[k].key]));
                     }
-                    
-                    // console.log(rowInnerContentData[k]);
                     rowContent.appendChild(rowInnerContent);
-                    console.log(rowInnerContentClass[m].key, );
                 }
 
             }
-            console.log();
-            //fixing accordion element
             const accHeadingfix = document.createElement('div');
             accHeadingfix.setAttribute('class', 'acc_heading_fix');
             adAccButtonElement.appendChild(accHeadingfix);
@@ -447,7 +477,8 @@ function allDevicesFunction() {
                             }
                             
                         }
-                } else {
+                }
+                else {
                     for (r=0; r< data.child.length; r++) {
                         let adDropdownMenuWrap = document.createElement('div');
                         adDropdownMenuWrap.setAttribute('class', 'menu_wrap');
@@ -501,14 +532,47 @@ $(document).ready(function(){
                 max: 22,
                 values: [ 10, 22 ],
                 slide: function( event, ui ) {
-                    $( "#first-" + sliderRange ).val( "$" + ui.values[ 0 ]);
-                    $( "#last-" + sliderRange ).val( "$" + ui.values[ 1 ] );
+                    $( "#first-" + sliderRange ).val( ui.values[ 0 ]);
+                    $( "#last-" + sliderRange ).val( ui.values[ 1 ] );
                 }
             });
 
-            $( "#first-" + sliderRange ).val( "$" + $( "#slider-range-" + sliderRange ).slider( "values", 0 ) );
-            $( "#last-" + sliderRange ).val( "$" + $( "#slider-range-" + sliderRange).slider( "values", 1 ) );
+            $( "#first-" + sliderRange ).val( $( "#slider-range-" + sliderRange ).slider( "values", 0 ) );
+            $( "#last-" + sliderRange ).val( $( "#slider-range-" + sliderRange).slider( "values", 1 ) );
+
+            var min = ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'];
+            $("#first-" + sliderRange).on('change', function() {
+                for(k=0; k<min.length; k++) {                    
+
+                    if (this.value==min[k]) {
+
+                        $('.ui-state-default:nth-child(3)').css('left', k*8.33333 + '%');
                         
+                        let leftValue= $('.ui-state-default:nth-child(3)').css('left');
+                        let rightValue= $('.ui-state-default:last-child').css('left');
+                        let widthValue= rightValue - leftValue + '%';
+
+                        $('.ui-slider-range').css( {'left' : leftValue , 'width' : widthValue } );
+                        console.log( widthValue );
+                    }
+                    
+                }
+            });
+            $("#last-" + sliderRange).on('change', function() {
+                for(k=0; k<min.length; k++) {
+
+                    if (this.value==min[k]) {
+
+                        let leftValue= $('.ui-state-default:nth-child(3)').css('left');
+                        let rightValue= $('.ui-state-default:last-child').css('left');
+                        let widthValue= leftValue - rightValue + '%';
+
+                        $('.ui-state-default:last-child').css('left', k*8.33333 + '%');
+                        $('.ui-slider-range').css( { 'left' : leftValue, 'width' : widthValue } );
+                    }
+                }
+            });
+
         }, 1000);
     });    
 });

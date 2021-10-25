@@ -98,7 +98,7 @@ header .container {
 
 .search_area .form_elem input {
   width: 700px;
-  padding: 11.5px 37px 11.5px 19px;
+  padding: 11px 37px 11px 19px;
   border: 0;
   outline: none;
   font-size: 18px;
@@ -333,6 +333,20 @@ main {
   margin: 35px 0 31px;
 }
 
+.filtration .range_value_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filtration .range_value_wrap input {
+  width: 100px;
+  margin-top: 40px;
+}
+
 .filtration .fitr_txt {
   font-size: 18px;
   font-weight: 500;
@@ -361,7 +375,7 @@ main {
 .filtration .filteration_options {
   position: absolute;
   background: #fff;
-  top: 26px;
+  top: 24px;
   width: 157px;
   left: 0;
   z-index: 999;
@@ -376,6 +390,10 @@ main {
 .filtration div {
   margin-bottom: 4px;
   font-size: 12px;
+}
+
+.filtration .filtr_options, .filtration .add_filter_elem {
+  margin-bottom: 0;
 }
 
 .filtration .select_none {
