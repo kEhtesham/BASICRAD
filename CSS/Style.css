@@ -769,10 +769,56 @@ main {
 
 .result_main_wrap .documents {
   width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result_main_wrap .documents i.fas {
+  margin-left: 10px;
+}
+
+.result_main_wrap .documents .pdf_icon {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.result_main_wrap .documents .files {
+  position: relative;
+  color: #21428A;
+  font-weight: 700;
+}
+
+.result_main_wrap .documents .files:hover .href_wrap, .result_main_wrap .documents .files:focus .href_wrap {
+  display: -ms-grid;
+  display: grid;
+}
+
+.result_main_wrap .documents .href_wrap {
+  position: absolute;
+  display: none;
+  background: #fff;
+  padding: 10px;
+  z-index: 999;
+  -webkit-box-shadow: 0px 0px 10px #00000017;
+          box-shadow: 0px 0px 10px #00000017;
+  border-radius: 6px;
+}
+
+.result_main_wrap .documents .href_wrap a {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.result_main_wrap .documents .href_wrap a:last-child {
+  border-bottom: 0px solid black;
 }
 
 .result_main_wrap .facilties {
-  width: 123px;
+  width: 150px;
 }
 
 .result_main_wrap .acc_heading {
@@ -789,7 +835,7 @@ main {
 .result_main_wrap .acc_heading.active {
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 998;
   margin-left: 0px;
 }
 
@@ -917,8 +963,8 @@ main {
   font-weight: 600;
 }
 
-.result_main_wrap .acc_content .row_content .facilities {
-  width: 123px;
+.result_main_wrap .acc_content .row_content .testFacility {
+  width: 150px;
 }
 
 .filter_remove {

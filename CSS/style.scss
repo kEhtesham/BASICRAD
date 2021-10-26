@@ -632,9 +632,46 @@ main {
     }
     .documents {
         width: 160px;
+        display: flex;
+        align-items: center;
+
+        // Hover Datat Files
+        i.fas {
+            margin-left: 10px;
+        }
+        .pdf_icon {
+            width: 18px;
+            margin-right: 10px;
+        }
+        .files {
+            position: relative;
+            color: $primary_button;
+            font-weight: 700;
+        }
+        .files:hover .href_wrap, .files:focus .href_wrap {
+            display: grid;
+        }
+        .href_wrap {
+            position: absolute;
+            display: none;
+            background: #fff;
+            padding: 10px;
+            z-index: 999;
+            box-shadow: 0px 0px 10px #00000017;
+            border-radius: 6px;
+        }
+
+        .href_wrap a {
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
+
+        .href_wrap a:last-child {
+            border-bottom: 0px solid black;
+        }
     }
     .facilties {
-        width: 123px;
+        width: 150px;
     }
     .acc_heading {
         padding: 21px 0;
@@ -647,7 +684,7 @@ main {
         &.active {
             left: 0;
             width: 100%;
-            z-index: 999;
+            z-index: 998;
             margin-left: 0px;
             &~.acc_heading_fix {
                 padding-top: 0;
@@ -741,8 +778,9 @@ main {
                 font-family: Open Sans;
                 font-weight: 600;
             }
-            .facilities {
-                width: 123px;
+            
+            .testFacility {
+                width: 150px;
             }
         }
     }

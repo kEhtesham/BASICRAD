@@ -333,10 +333,10 @@ function accordionFunction() {
                 {class: 'testFacility updated', key: 'testFacility', value: ''}
             ];
 
-            const rowInnerDocumentClass= [
-                {class: 'file_name', key: 'fileName', value: ''},
-                {class: 'file_URL', key: 'link', value: ''}
-            ];
+            // const rowInnerDocumentClass= [
+            //     {class: 'file_name', key: 'fileName', value: ''},
+            //     {class: 'file_URL', key: 'link', value: ''}
+            // ];
 
 
             // console.log(rowInnerDocumentClass.length);
@@ -348,32 +348,71 @@ function accordionFunction() {
                 const rowContent = document.createElement('div');
                 rowContent.setAttribute('class', 'row_content');
                 accContent.appendChild(rowContent);
-                for (w=0; w<rowInnerDocumentClass.length; w++) {
-                    const rowInnerDocuments= document.createElement('a');
-                    rowInnerDocuments.setAttribute('class', rowInnerDocumentClass[0].class);
-                    rowInnerDocuments.setAttribute('href', result[Object.keys(result)[a]][i][rowInnerDocumentClass[1].key])
-                    console.log(result[Object.keys(result)[a]][i][rowInnerDocumentClass[1].key]);
-                }
 
                 for (m=0; m< rowInnerContentClass.length; m++) {
 
                     const rowInnerContent= document.createElement('div');
                     rowInnerContent.setAttribute('class', rowInnerContentClass[m].class);
+
+
+                    const rowInnerWrapp= document.createElement('div');
+                    rowInnerWrapp.setAttribute('class', 'href_wrap');
+
+                    
+
+                    // console.log(rowDocumentContent);
+
                     if(rowInnerContentClass[m].key === ''){
                         rowInnerContent.appendChild(document.createTextNode(rowInnerContentClass[m].value));
-                    } else {
+                    }
+                    else if(rowInnerContentClass[m].key === 'testDocuments'){                        
+                        const tempLength = result[Object.keys(result)[a]][i][rowInnerContentClass[m].key].length;
+
+                        if(tempLength > 1) {
+                            const rowDocumentContentImg= document.createElement('img');
+                            rowDocumentContentImg.setAttribute('class', 'pdf_icon');
+                            rowDocumentContentImg.setAttribute('src', 'Images/pdf-file.svg');
+
+                            const rowDocumentContentElem= document.createElement('div');
+                            rowDocumentContentElem.setAttribute('class', 'files');
+
+                            rowDocumentContentElem.appendChild(document.createTextNode('2 Documents'));
+
+                            const rowDocumentIcon= document.createElement('i');
+                            rowDocumentIcon.setAttribute('class', 'fas fa-caret-down');
+                            rowInnerContent.appendChild(rowDocumentContentImg);
+                            rowInnerContent.appendChild(rowDocumentContentElem);
+                            rowInnerContent.appendChild(rowDocumentIcon);
+
+                            for (s=0; s<2; s++) {
+                                const rowDocumentContent= document.createElement('a');
+                                rowDocumentContent.setAttribute('download', 'newfilename');
+                                rowDocumentContent.setAttribute('onclick', 'downloadFileFunction()');
+                                rowDocumentContent.setAttribute('href', result[Object.keys(result)[a]][i][rowInnerContentClass[m].key][s].link);
+                                rowDocumentContent.appendChild(document.createTextNode(result[Object.keys(result)[a]][i][rowInnerContentClass[m].key][s].fileName));
+
+                                // console.log(rowDocumentContent);
+                                rowInnerWrapp.appendChild(rowDocumentContent);
+                                rowDocumentContentElem.appendChild(rowInnerWrapp);
+                            }                            
+                        } else if(tempLength === 1) {
+                            let rowDocumentContent= document.createElement('a');
+                            rowDocumentContent.setAttribute('download', 'newfilename');
+                            rowDocumentContent.setAttribute('class', 'files');
+
+                            rowDocumentContent.setAttribute('href', result[Object.keys(result)[a]][i][rowInnerContentClass[m].key][0].link);
+                            rowDocumentContent.appendChild(document.createTextNode('Radiation Test'));
+                            rowInnerContent.appendChild(rowDocumentContent);
+
+                            // console.log(rowInnerContent);
+                        } else {
+                            let rowDocumentContent= document.createElement('div');
+                            rowDocumentContent.appendChild(document.createTextNode('[no Files Located]'));
+                            rowInnerContent.appendChild(rowDocumentContent);
+                        }
+                    }
+                    else {
                         rowInnerContent.appendChild(document.createTextNode(result[Object.keys(result)[a]][i][rowInnerContentClass[m].key]));
-
-                        // for (k=0; k< rowInnerDocumentClass.length; k++) {
-                        //     const getUrlPath = result[Object.keys(result)[a]][i][rowInnerContentClass[17].key];
-                        //     const rowInnerDocuments= document.createElement('a');
-                        //     rowInnerDocuments.setAttribute('class', 'file_name');
-                        //     rowInnerDocuments.setAttribute('href', getUrlPath[k][rowInnerDocumentClass[k].key]);
-                        //     console.log( rowInnerDocuments[m] );
-                        //     rowInnerDocuments.appendChild(document.createTextNode( getUrlPath[k][rowInnerDocumentClass[k].key] ));
-                        // }
-
-                        // rowInnerContent.appendChild(document.createTextNode(result[Object.keys(result)[a]][i][rowInnerDocuments[k].key]));
                     }
                     rowContent.appendChild(rowInnerContent);
                 }
