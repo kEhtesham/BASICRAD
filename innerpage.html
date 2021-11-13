@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASICARD</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="JS/device.js"></script>
+    <script src="JS/search_results_page_1.js"></script>
+
+    <script src="JS/header.js"></script>
+</head>
+<body onload="loadJsFunction()" id="bodyId">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="Images/Logo.svg" alt="">
+                </div>
+                <div class="search_area">
+                    <div class="form_elem">
+                        <ul class="dropdown_wrap">
+                            <li class="search_select">All Devices<i class="fas fa-caret-down"></i>
+                                <div class="dropdown_elem" id="all_devices_element">
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                        <form action="">
+                            <input type="text" class="search_item" placeholder="Search for device category, part number, or tech specs">
+                            <button id="search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="http://" target="blank" rel="Blank">About BasicRad</a></li>
+                        <li><a href="http://" target="blank" rel="Blank">Release Notes</a></li>
+                        <li><a href="http://" target="blank" rel="Blank">Blog</a></li>
+                    </ul>
+                </nav>
+                <div class="profile_element">
+                    <div class="profile_image">
+                        <img src="Images/Profile.svg" alt="">
+                    </div>
+                    <div class="profile_name">Gbenga Badipe</div>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Header End -->
+        <main>
+            <div class="breadcrums">
+                <ul class="breadcrum_wrap">
+                    <li>
+                        <a href="http://">All Devices</a>
+                    </li>
+                    >
+                    <li class="drop_hover" onmouseenter="activeMegaMenu('capacitor', 'capacitors_menu1', 'capacitors_tabcontent')">
+                        <a href="http://">Capacitors <i class="fas fa-caret-down"></i> </a>
+                        <div class="dropdown_elem">
+                            <div class="dropdown">
+                                <div class="tab capacitor">
+                                    <button class="capacitors_tablinks tablinks active" onclick="megaMenu(event, 'capacitors_menu1')">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks" onclick="megaMenu(event, 'capacitors_menu2')">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks" onclick="megaMenu(event, 'capacitors_menu3')">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitors_tablinks tablinks">Device Catagory(300)</button>
+                                </div>
+    
+                                <div id="capacitors_menu1" class="capacitors_tabcontent tabcontent" style="display: flex;">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div id="capacitors_menu2" class="capacitors_tabcontent tabcontent">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (20)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div id="capacitors_menu3" class="capacitors_tabcontent tabcontent">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (30)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    >
+                    <li class="drop_hover" onmouseenter="activeMegaMenu('capacitor_arrays', 'capacitor_array_menu1', 'capacitorsArray_tabcontent')">
+                        <a href="http://">Capacitor Arrays <i class="fas fa-caret-down"></i> </a>
+                        <div class="dropdown_elem">
+                            <div class="dropdown">
+                                <div class="tab capacitor_arrays">
+                                    <button class="capacitorsArray_tablinks tablinks active" onclick="megaMenu(event, 'capacitor_array_menu1')">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks" onclick="megaMenu(event, 'capacitor_array_menu2')">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks" onclick="megaMenu(event, 'capacitor_array_menu3')">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                    <button class="capacitorsArray_tablinks tablinks">Device Catagory(300)</button>
+                                </div>
+    
+                                <div id="capacitor_array_menu1" class="capacitorsArray_tabcontent tabcontent" style="display: flex;">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div id="capacitor_array_menu2" class="capacitorsArray_tabcontent tabcontent">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (20)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div id="capacitor_array_menu3" class="capacitorsArray_tabcontent tabcontent">
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (30)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu_wrap">
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="" class="tabmenu_heading">Device Sub Category (10)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                            <li><a href="">Sub-Sub Category (1)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+</body>
+</html>

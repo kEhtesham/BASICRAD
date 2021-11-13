@@ -15,19 +15,28 @@
     <script src="JS/device.js"></script>
     <script src="JS/search_results_page_1.js"></script>
 
-    <script src="JS/script.js"></script>    
+    <script src="JS/header.js"></script>
+    <script src="JS/accordion.js"></script>
+    <script src="JS/dropdown.js"></script>
+    <script src="JS/rangeslider.js"></script>
+    <script src="JS/responsive.js"></script>
 </head>
-<body onload="loadJsFunction()" id="bodyId">
+<body onload="loadJsFunction()" onresize="navbarResponsive()" id="bodyId">
     <!-- Header -->
     <header>
         <div class="container">
+            <div class="hamburger" onclick="navbarAnimation()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="logo">
                 <img src="Images/Logo.svg" alt="">
             </div>
             <div class="search_area">
                 <div class="form_elem">
                     <ul class="dropdown_wrap">
-                        <li class="search_select" onmouseenter="sactiveMegaMenu('all_devices_tab', 'all_devices_tabcontent')">All Devices<i class="fas fa-caret-down"></i>
+                        <li class="search_select">All Devices<i class="fas fa-caret-down"></i>
                             <div class="dropdown_elem" id="all_devices_element">
                                 
                             </div>
