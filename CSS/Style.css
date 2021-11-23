@@ -1038,7 +1038,7 @@ main {
   width: 248px;
   z-index: 999;
   max-height: 492px;
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 9999;
 }
 

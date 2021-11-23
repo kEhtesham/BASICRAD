@@ -118,14 +118,12 @@ function getRangeFunction(functionId) {
     const inputFirstValue = inputFirstNextSibling.nextSibling;
     inputFirstValue.value=getRangeValue;
 }
-
 function getLastRangeFunction(lastRangeId) {
     const getLastRangeValue = document.getElementById(lastRangeId).value;
     const inputLastNextSibling = document.getElementById(lastRangeId).nextSibling;
     const inputLastValue = inputLastNextSibling.nextSibling;
     inputLastValue.value = getLastRangeValue;
 }
-
 function getInputFunction(inputId) {
     const getInputValue = document.getElementById(inputId).value;
     const pushPriviousValue = document.getElementById(inputId).previousSibling;
@@ -162,4 +160,17 @@ function loadJsFunction() {
     accordionFunctionRun();
     allDevicesFunction();
     navbarResponsive()
+}
+
+
+function addRemoveClass() {
+    var sort_drop_elem = document.querySelectorAll('.sort_drop_elem');
+    for (i=0; i<sort_drop_elem.length; i++) {
+        if ( sort_drop_elem[i].classList.contains('active') ) {
+            sort_drop_elem[i].classList.add('active');
+        }
+        else {
+            sort_drop_elem[i].classList.remove('active');
+        }
+    }
 }

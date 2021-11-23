@@ -5,22 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BASICARD</title>
+
     <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/innerPage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script src="JS/device.js"></script>
     <script src="JS/search_results_page_1.js"></script>
-
+    <script src="JS/dropdown.js"></script>
     <script src="JS/header.js"></script>
+    <script src="JS/responsive.js"></script>
+    <script src="JS/rangeslider.js"></script>
+ 
 </head>
 <body onload="loadJsFunction()" id="bodyId">
         <!-- Header -->
         <header>
             <div class="container">
+                <div class="hamburger" onclick="navbarAnimation()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="logo">
                     <img src="Images/Logo.svg" alt="">
                 </div>
@@ -640,8 +651,288 @@
                             </div>
                         </div>
                     </li>
+                    >
+                    <li class="drop_hover">
+                        <a href="http://">MAX3453EEUD<i class="fas fa-caret-down"></i> </a>
+                    </li>
                 </ul>
             </div>
+            <div class="inner_part_number result_main_wrap">
+                <div class="part_number_image">
+                    <img src="Images/InnerPage/partnumber_profile.png" alt="Partnumber Profile">
+                </div>
+                <div class="pn_data_element">
+                    <div class="acc_heading">
+                        <div class="acc_head acc_head_top">
+                            <div class="acc_content_head_wrap f20">MAX3453EEUD</div>
+                            <div class="radiation_test_detail f14">3 Radiation Tests</div>
+                        </div>
+                        <div class="acc_head acc_head_bottom">
+                            <div class="ratings">
+                                <i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star active"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="no_of_reviews more_review_info">(30 Rad Reviews)</div>
+                            <div class="latest_viewed more_review_info">
+                                <i class="fas fa-reply-all"></i>3 Sellers<i class="fas fa-caret-down"></i>
+                                <div class="latest_view_drop_path">
+                                    <div class="latest_view_dropdown">
+                                        <a href="" class="">Octopart</a>
+                                        <a href="" class="">Digikey</a>
+                                        <a href="" class="">Mouser</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partnumber_data">
+                        <div class="pn_details_left pn_details_wrap">
+                            <div class="pn_details">
+                                <div class="pn_title">SKU</div>
+                                <div class="pn_content">XXXXXXXXX</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title">Rev</div>
+                                <div class="pn_content">XX</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title">Manufacturer</div>
+                                <div class="pn_content">XXXXXXXXX</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title">Description</div>
+                                <div class="pn_content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</div>
+                            </div>
+                        </div>
+                        <div class="pn_details_right pn_details_wrap">
+                            <div class="pn_details">
+                                <div class="pn_title pn_details_title">Single Event Upset</div>
+                                <div class="pn_content pn_details_discr">Yes (2 Tests)</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title pn_details_title">Total Ionizing Dose</div>
+                                <div class="pn_content pn_details_discr">Yes (1 Tests)</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title pn_details_title">Neutron Displacement Damage</div>
+                                <div class="pn_content pn_details_discr">No</div>
+                            </div>
+                            <div class="pn_details">
+                                <div class="pn_title pn_details_title">Transient Radiation Effects</div>
+                                <div class="pn_content pn_details_discr">No</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </main>
+
+        <section class="radiation_details">
+            <div class="radiation_tabs">
+                <button class="tablinks active f18" onclick="radiationTabs(event, 'Technical-Specs')">Technical Specs</button>
+                <button class="tablinks f18" onclick="radiationTabs(event, 'Radiation-Tests')">Radiation Tests</button>
+                <button class="tablinks f18" onclick="radiationTabs(event, 'Rad-Reviews')">Rad Reviews</button>
+            </div>
+            <div class="detail_option">
+                <div class="detail_filter">
+                    <img src="Images/filter_wht.svg" alt="">
+                    <div class="filter_element f14">Filters<i class="fas fa-caret-down"></i>
+                        <div class="inner_filter_collabs drop_expand_menu">
+                            <div class="filtr_heading" id="collapse_grp" onclick="collapsFilterFunction(event, 'inner_filter_collabs')">Collapse all groups</div>
+                            <div class="filtr_heading" id="expande_grp" onclick="expandFilterFunction(event, 'inner_filter_collabs')">Expand all groups</div>
+                            <div class="dropdown_accordion">
+                                <div class="dropdown_acc_head" style="display: block;">
+                                    <i class="fas fa-chevron-down"></i>
+                                    Device Information
+                                </div>
+                                <div class="dropdown_acc_content" id="rest">
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_part_number" checked>
+                                        <label for="acc_part_number">Part Number</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sku" checked>
+                                        <label for="acc_sku">SKU</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_device_type" checked>
+                                        <label for="acc_device_type">Device Type</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_manufacturer" checked>
+                                        <label for="acc_manufacturer">Manufacturer</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev" checked>
+                                        <label for="acc_rev">Revision (Rev)</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_rev_date" checked>
+                                        <label for="acc_rev_date">Revision Date (Rev Date)</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_lot_code" checked>
+                                        <label for="acc_lot_code">Lot Code</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown_acc_head"  style="display: block;">
+                                    <i class="fas fa-chevron-down"></i>
+                                    Radiation Test Details
+                                </div>
+                                <div class="dropdown_acc_content">
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_radiation_test" checked>
+                                        <label for="acc_radiation_test">Radiation Test</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="test_catagory" checked>
+                                        <label for="test_catagory">Test Catagory</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_source" checked>
+                                        <label for="acc_source">Source</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
+                                        <label for="acc_test_date">Test Date</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_details" checked>
+                                        <label for="acc_test_details">Test Details</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_result" checked>
+                                        <label for="acc_result">Results</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown_acc_head" style="display: block;">
+                                    <i class="fas fa-chevron-down"></i>
+                                    Technical Details
+                                </div>
+                                <div class="dropdown_acc_content">
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_capacitance" checked>
+                                        <label for="acc_capacitance">Capacitance</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_sc_urdc" checked>
+                                        <label for="acc_sc_urdc">Rated(DC) Voltage(URdc)</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_positive_tolrence" checked>
+                                        <label for="acc_positive_tolrence">Positive Tolerance</label>
+                                    </div>
+                                    <div class="filtr_wrap">
+                                        <input type="checkbox" class="acc_filtr_check" name="Filter" id="acc_test_date" checked>
+                                        <label for="acc_test_date">Nagative Tolerance</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_filter">
+                    <img src="Images/Double-arrows.svg" alt="">
+                    <div class="filter_element f14">Sort Date<i class="fas fa-caret-down"></i>
+                        <div class="sorting_dropdown drop_expand_menu">
+                            <div class="sort_drop_elem active" onclick="addRemoveClass()">Ascending</div>
+                            <div class="sort_drop_elem" onclick="addRemoveClass()">Descending</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail_filter">
+                    <img src="Images/Energy-lvl.png" alt="">
+                    <div class="filter_element f14">Energy Level<i class="fas fa-caret-down"></i>
+                        <div class="filter_range_slider drop_expand_menu">
+                            <div class="filter_range_element" style="position: relative;">
+                                <div class="dual-range" data-min="20" data-max="70" style="--x-1:0px; --x-2:137px;">
+                                    <span class="handle left" data-value="20"></span>
+                                    <span class="highlight"></span>
+                                    <span class="handle right" data-value="70"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="Technical-Specs" class="tab_id_tabcontent" style="display: block;">
+                <div class="tab_content_main_wrap">
+                    <div class="tab_content_wrap">
+                        <div class="display_date f16">8/15/2000</div>
+                        <div class="tab_content_element">
+                            <div class="tab_heading_content">
+                                <div class="light_title f16 dot"><span>Single Event Latch Up</span> (SEU)</div>
+                                <div class="content_display f14 dot">20 MeV - 30 MeV</div>
+                                <div class="tickmark f12 dot"><img src="Images/tickmark.svg">Passed</div>
+                                <div class="file_name f12"><img src="Images/pdf-file.svg">MAX3453EEUD Single Event Upset.pdf</div>
+                            </div>
+                            <div class="tab_discription f16">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content_main_wrap">
+                    <div class="tab_content_wrap">
+                        <div class="display_date f16">8/15/2000</div>
+                        <div class="tab_content_element">
+                            <div class="tab_heading_content">
+                                <div class="light_title f16 dot"><span>Single Event Latch Up</span> (SEU)</div>
+                                <div class="content_display f14 dot">20 MeV - 30 MeV</div>
+                                <div class="tickmark f12 dot"><img src="Images/tickmark.svg">Passed</div>
+                                <div class="file_name f12"><img src="Images/pdf-file.svg">MAX3453EEUD Single Event Upset.pdf</div>
+                            </div>
+                            <div class="tab_discription f16">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content_main_wrap">
+                    <div class="tab_content_wrap">
+                        <div class="display_date f16">8/15/2000</div>
+                        <div class="tab_content_element">
+                            <div class="tab_heading_content">
+                                <div class="light_title f16 dot"><span>Single Event Latch Up</span> (SEU)</div>
+                                <div class="content_display f14 dot">20 MeV - 30 MeV</div>
+                                <div class="tickmark f12 dot"><img src="Images/tickmark.svg">Passed</div>
+                                <div class="file_name f12"><img src="Images/pdf-file.svg">MAX3453EEUD Single Event Upset.pdf</div>
+                            </div>
+                            <div class="tab_discription f16">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Radiation-Tests" class="tab_id_tabcontent" style="display: none;">
+                Radiation-Tests Content
+            </div>
+              
+            <div id="Rad-Reviews" class="tab_id_tabcontent" style="display: none;">
+                Rad-Reviews Content
+            </div>
+        </section>
+
+<script>
+function loadJsFunction() {
+    allDevicesJsonObjFunction();
+    navbarResponsive();
+}
+</script>
+<script>
+
+function radiationTabs(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab_id_tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
 </body>
 </html>
