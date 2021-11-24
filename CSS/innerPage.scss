@@ -38,6 +38,7 @@ $sort_downdown: #68686A;
             padding: 0 0 45px;
             .acc_head {
                 padding-left: 0;
+                margin-bottom: 5px;
                 .acc_content_head_wrap {
                     font-weight: 600;
                     text-decoration: none!important;
@@ -47,7 +48,6 @@ $sort_downdown: #68686A;
                     margin-left: 10px;
                     color: $RadiationText;
                     text-decoration: underline;
-                    font-weight: 600;
                 }
             }
         }
@@ -114,7 +114,7 @@ $sort_downdown: #68686A;
         .pn_title {
             width: 125px;
             color: #666666;
-            font-weight: 600;
+            font-weight: 500;
             &.pn_details_title {
                 width: 300px;
             }
@@ -226,6 +226,31 @@ $sort_downdown: #68686A;
 
 .tab_id_tabcontent {
     color: $tab_content_color;
+    
+    .page_details_wrap {
+        padding-top: 28px;
+        margin-top: 17px;
+        color: #333333DE;
+        .details_heading {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .tab_details_element {
+            margin-bottom: 20px;
+            width: 33%;
+            .tab_details_heading {
+                font-weight: 500;
+                color: #333333DE;
+            }
+        }
+        .details_content {
+            display: flex;
+            flex-flow: wrap;
+            width: 26%;
+        }
+    }
+
+    // radiation test 
     img {
         width: 16px;
     }

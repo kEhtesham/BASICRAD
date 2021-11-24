@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: Roboto;
+  font-family: Roboto !important;
   width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -231,9 +231,15 @@ main {
   display: flex;
 }
 
+.breadcrum_wrap span {
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .breadcrum_wrap li {
-  margin: 0 24px 0 19px;
+  margin: 0 30px 0 26px;
   position: relative;
+  font-weight: 300;
 }
 
 .breadcrum_wrap li:hover .dropdown_elem {
@@ -248,11 +254,18 @@ main {
   color: #295B97;
   text-decoration: underline;
   font-size: 20px;
+  position: relative;
 }
 
 .breadcrum_wrap i {
   color: #C2C2C2;
-  padding-left: 9px;
+  padding-left: 5px;
+  font-size: 12px;
+  position: absolute;
+  right: -13px;
+  top: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .dropdown_wrap .dropdown_elem {
@@ -732,6 +745,7 @@ main {
 
 .result_main_wrap .filtr_icon {
   width: 20px;
+  margin-left: 5px;
 }
 
 .result_main_wrap .part_number {
@@ -924,16 +938,15 @@ main {
 
 .result_main_wrap .acc_heading .acc_head .radiation_test_detail {
   color: #565656;
-  font-family: Open Sans;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
   margin-left: 4px;
 }
 
 .result_main_wrap .acc_heading .acc_head .ratings i.fas {
   color: #D9D9D9;
-  font-size: 14px;
-  margin-right: 3px;
+  font-size: 12px;
+  margin-right: 4px;
 }
 
 .result_main_wrap .acc_heading .acc_head .ratings i.fas.active {
@@ -943,9 +956,9 @@ main {
 }
 
 .result_main_wrap .acc_heading .acc_head .more_review_info {
-  font-family: Open Sans;
   font-size: 12px;
   color: #003D8B;
+  font-weight: 400;
 }
 
 .result_main_wrap .acc_heading .acc_head .more_review_info.no_of_reviews {
@@ -953,7 +966,7 @@ main {
 }
 
 .result_main_wrap .acc_heading .acc_head .more_review_info.latest_viewed {
-  margin-left: 21px;
+  margin-left: 15px;
 }
 
 .result_main_wrap .acc_heading.active .fa-chevron-down {
@@ -1007,7 +1020,6 @@ main {
 }
 
 .result_main_wrap .acc_content .row_content .updated {
-  font-family: Open Sans;
   font-weight: 600;
 }
 
