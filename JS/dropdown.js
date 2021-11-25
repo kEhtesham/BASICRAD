@@ -111,7 +111,6 @@ function filterPushFunction(filterId) {
     }
 }
 
-
 function getRangeFunction(functionId) {
     const getRangeValue = document.getElementById(functionId).value;
     const inputFirstNextSibling = document.getElementById(functionId).nextSibling;
@@ -159,18 +158,5 @@ function loadJsFunction() {
     accordionFunction();
     accordionFunctionRun();
     allDevicesFunction();
-    navbarResponsive()
-}
-
-
-function addRemoveClass() {
-    var sort_drop_elem = document.querySelectorAll('.sort_drop_elem');
-    for (i=0; i<sort_drop_elem.length; i++) {
-        if ( sort_drop_elem[i].classList.contains('active') ) {
-            sort_drop_elem[i].classList.add('active');
-        }
-        else {
-            sort_drop_elem[i].classList.remove('active');
-        }
-    }
+    navbarResponsive();
 }

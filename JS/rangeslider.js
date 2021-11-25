@@ -54,12 +54,15 @@ $(document).ready(function(){
 // inner page range slider
 
 window.addEventListener('DOMContentLoaded', () => {
-	new dualRangeSlider(document.querySelector(".dual-range"))
+	new dualRangeSlider(document.querySelector(".dual-range"));
+	var rightRangeValueLoad = document.querySelector('.handle.right');
+	if (rightRangeValueLoad.attributes[1].value > 19){
+		rightRangeValueLoad.style.fontSize = "0";		
+	}
+	else {
+		rightRangeValueLoad.style.fontSize = "14px";
+	}
 })
-
-
-
-
 
 
 class dualRangeSlider {
@@ -122,10 +125,16 @@ class dualRangeSlider {
 			const otherX = parseInt(this.range.style.getPropertyValue("--x-1"));
 			newX = Math.max(newX, otherX + handleRect.width)
 			newX = Math.min(newX, parentRect.width - handleRect.width/2)
+			var rightRangeValue = document.querySelector('.handle.right');
+			if (rightRangeValue.attributes[1].value > 19){
+				rightRangeValue.style.fontSize = "0";
+			}
+			else {
+				rightRangeValue.style.fontSize = "14px";
+			}
 		}
 		this.activeHandle.dataset.value = this.calcHandleValue((newX + handleRect.width/2) / parentRect.width)
 		this.range.style.setProperty(property, newX + "px");
-
 	}
 	
 	calcHandleValue(percentage) {

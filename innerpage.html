@@ -17,11 +17,12 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script src="JS/device.js"></script>
     <script src="JS/search_results_page_1.js"></script>
-    <script src="JS/dropdown.js"></script>
+    <script src="JS/searchresultdata.js"></script>
     <script src="JS/header.js"></script>
     <script src="JS/responsive.js"></script>
     <script src="JS/rangeslider.js"></script>
- 
+    <script src="JS/dropdown.js"></script>
+
 </head>
 <body onload="loadJsFunction()" id="bodyId">
         <!-- Header -->
@@ -831,12 +832,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="detail_filter">
+                <div class="detail_filter sorting_date">
                     <img src="Images/Double-arrows.svg" alt="">
                     <div class="filter_element f14">Sort Date<i class="fas fa-caret-down"></i>
                         <div class="sorting_dropdown drop_expand_menu">
-                            <div class="sort_drop_elem active" onclick="addRemoveClass()">Ascending</div>
-                            <div class="sort_drop_elem" onclick="addRemoveClass()">Descending</div>
+                            <div class="sort_drop_elem active">Ascending</div>
+                            <div class="sort_drop_elem">Descending</div>
                         </div>
                     </div>
                 </div>
@@ -846,10 +847,11 @@
                     <div class="filter_element f14">Energy Level<i class="fas fa-caret-down"></i>
                         <div class="filter_range_slider drop_expand_menu">
                             <div class="filter_range_element" style="position: relative;">
-                                <div class="dual-range" data-min="20" data-max="70" style="--x-1:0px; --x-2:137px;">
-                                    <span class="handle left" data-value="20"></span>
+                                <div class="dual-range" data-min="1" data-max="20" style="--x-2:27.3438px;">
+                                    <span class="handle left"></span>
                                     <span class="highlight"></span>
-                                    <span class="handle right" data-value="70"></span>
+                                    <span class="handle right" data-value="20"></span>
+                                    <span class="fixed_mev last"></span>
                                 </div>
                             </div>
                         </div>
@@ -863,15 +865,15 @@
                     <div class="details_content">
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Device Type</div>
-                            <div class="tab_details_discription f12">Capacitor</div>
+                            <div class="tab_details_discription f12" id="device_type"></div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Manufacturer</div>
-                            <div class="tab_details_discription f12">Maxim</div>
+                            <div class="tab_details_discription f12" id="manufacturer"></div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Rev</div>
-                            <div class="tab_details_discription f12">XX</div>
+                            <div class="tab_details_discription f12" id="rev">XX</div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Height</div>
@@ -883,7 +885,7 @@
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Lot Code</div>
-                            <div class="tab_details_discription f12">XX</div>
+                            <div class="tab_details_discription f12" id="lot_code">XX</div>
                         </div>
                     </div>
                 </div>
@@ -892,7 +894,7 @@
                     <div class="details_content">
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Capacitance</div>
-                            <div class="tab_details_discription f12">22 µF</div>
+                            <div class="tab_details_discription f12" id="capacitance">22 µF</div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Capacitor Type</div>
@@ -916,11 +918,11 @@
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Negative Tolerance</div>
-                            <div class="tab_details_discription f12">20%</div>
+                            <div class="tab_details_discription f12" id="negative_tolerance">20%</div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Positive Tolerance</div>
-                            <div class="tab_details_discription f12">20%</div>
+                            <div class="tab_details_discription f12" id="positive_tolerance">20%</div>
                         </div>
                         <div class="tab_details_element">
                             <div class="tab_details_heading f14">Surface Mount</div>
@@ -1002,6 +1004,13 @@ function radiationTabs(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
+</script>
+
+<script>
+$('.sort_drop_elem').click(function() {
+    $('.sort_drop_elem').removeClass('active');
+    $(this).addClass('active');
+});
 </script>
 </body>
 </html>
